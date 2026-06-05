@@ -40,7 +40,7 @@ JWT_PASSPHRASE=ChangeThisJwtPassphrase
 JWT_TOKEN_TTL=3600
 CORS_ALLOW_ORIGIN='^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'
 ADMIN_EMAIL=admin@sise-ager.local
-ADMIN_PASSWORD=ChangeMeAdmin123!
+ADMIN_PASSWORD=admin123
 ADMIN_NOM=Administrateur
 ADMIN_PRENOM=SISE-AGER
 ADMIN_TELEPHONE=
@@ -85,7 +85,7 @@ Exemple de connexion admin :
 ```bash
 curl -X POST http://localhost:8080/api/login_check \
   -H 'Content-Type: application/json' \
-  -d '{"email":"admin@sise-ager.local","password":"ChangeMeAdmin123!"}'
+  -d '{"email":"admin@sise-ager.local","password":"admin123"}'
 ```
 
 ## Lancement hors Docker

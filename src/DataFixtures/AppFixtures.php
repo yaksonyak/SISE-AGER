@@ -5,44 +5,37 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private const ADMIN_EMAIL = 'admin@sise-ager.local';
+    private const ADMIN_PASSWORD = 'admin123';
+    private const ADMIN_NOM = 'Administrateur';
+    private const ADMIN_PRENOM = 'SISE-AGER';
+
     public function __construct(
         private readonly UserPasswordHasherInterface $passwordHasher,
-        #[Autowire('%env(ADMIN_EMAIL)%')]
-        private readonly string $adminEmail,
-        #[Autowire('%env(ADMIN_PASSWORD)%')]
-        private readonly string $adminPassword,
-        #[Autowire('%env(ADMIN_NOM)%')]
-        private readonly string $adminNom,
-        #[Autowire('%env(ADMIN_PRENOM)%')]
-        private readonly string $adminPrenom,
-        #[Autowire('%env(ADMIN_TELEPHONE)%')]
-        private readonly string $adminTelephone,
     ) {
     }
 
     public function load(ObjectManager $manager): void
     {
-        $existingAdmin = $manager->getRepository(User::class)->findOneBy(['email' => $this->adminEmail]);
+        $admin = $manager->getRepository(User::class)->findOneBy(['email' => self::ADMIN_EMAIL]);
 
-        if ($existingAdmin instanceof User) {
-            return;
+        if (!$admin instanceof User) {
+            $admin = (new User())
+                ->setEmail(self::ADMIN_EMAIL)
+                ->setNom(self::ADMIN_NOM)
+                ->setPrenom(self::ADMIN_PRENOM)
+                ->setTelephone(null);
+
+            $manager->persist($admin);
         }
 
-        $admin = (new User())
-            ->setEmail($this->adminEmail)
-            ->setNom($this->adminNom)
-            ->setPrenom($this->adminPrenom)
-            ->setTelephone($this->adminTelephone ?: null)
-            ->setRoles(['ROLE_ADMIN']);
+        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setPassword($this->passwordHasher->hashPassword($admin, self::ADMIN_PASSWORD));
 
-        $admin->setPassword($this->passwordHasher->hashPassword($admin, $this->adminPassword));
-
-        $manager->persist($admin);
         $manager->flush();
     }
 }
