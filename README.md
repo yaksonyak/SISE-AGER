@@ -112,6 +112,22 @@ symfony server:start
 - La ressource `User` est exposée par API Platform uniquement aux utilisateurs ayant `ROLE_ADMIN`.
 - Les mots de passe créés via l'API `User` passent par un processor API Platform qui les hache avant persistance.
 
+
+## Endpoints métier PNER
+
+Les référentiels métier PNER sont exposés par API Platform et consultables dans Swagger sur <http://localhost:8080/api>.
+
+| Ressource | Endpoint collection | Usage |
+| --- | --- | --- |
+| Programmes PNER | `/api/programme_pners` | Programmes PUERG, PERMT et PFAUER du PNER Horizon 2040 |
+| ZER | `/api/zers` | Zones d’Électrification Rurale |
+| Préfectures | `/api/prefectures` | Préfectures rattachées aux ZER |
+| Sous-préfectures | `/api/sous_prefectures` | Sous-préfectures rattachées aux préfectures |
+| Localités | `/api/localites` | Localités rurales à électrifier et rattachements PNER |
+| Systèmes d’électrification | `/api/systeme_electrifications` | Référentiel des solutions techniques d’électrification |
+
+Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités et des systèmes d’électrification.
+
 ## Commandes utiles
 
 ```bash
