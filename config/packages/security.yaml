@@ -37,7 +37,7 @@ security:
     access_control:
         - { path: ^/api/login_check$, roles: PUBLIC_ACCESS }
         # Ouverture temporaire pour la phase de développement métier PNER :
-        # les référentiels API Platform sont consultables sans JWT.
+        # les référentiels et le module projet d’électrification API Platform sont consultables sans JWT.
         - { path: ^/api/docs, roles: PUBLIC_ACCESS }
         - { path: ^/api/programme_pners, roles: PUBLIC_ACCESS }
         - { path: ^/api/zers, roles: PUBLIC_ACCESS }
@@ -45,6 +45,10 @@ security:
         - { path: ^/api/sous_prefectures, roles: PUBLIC_ACCESS }
         - { path: ^/api/localites, roles: PUBLIC_ACCESS }
         - { path: ^/api/systeme_electrifications, roles: PUBLIC_ACCESS }
+        - { path: ^/api/projet_electrifications, roles: PUBLIC_ACCESS }
+        - { path: ^/api/projet_localites, roles: PUBLIC_ACCESS }
+        - { path: ^/api/phase_projets, roles: PUBLIC_ACCESS }
+        - { path: ^/api/activite_projets, roles: PUBLIC_ACCESS }
         - { path: ^/api/?$, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
