@@ -138,7 +138,19 @@ class ProjetElectrification
     #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: PhaseProjet::class, orphanRemoval: true)]
     private Collection $phasesProjet;
 
-    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); }
+    /** @var Collection<int, ValeurIndicateur> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: ValeurIndicateur::class)]
+    private Collection $valeursIndicateur;
+
+    /** @var Collection<int, RapportSuivi> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: RapportSuivi::class)]
+    private Collection $rapportsSuivi;
+
+    /** @var Collection<int, ObservationSuivi> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: ObservationSuivi::class)]
+    private Collection $observationsSuivi;
+
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getCode(): ?string { return $this->code; }
     public function setCode(string $code): static { $this->code = mb_strtoupper(trim($code)); return $this; }
@@ -182,6 +194,18 @@ class ProjetElectrification
     public function getPhasesProjet(): Collection { return $this->phasesProjet; }
     public function addPhaseProjet(PhaseProjet $phaseProjet): static { if (!$this->phasesProjet->contains($phaseProjet)) { $this->phasesProjet->add($phaseProjet); $phaseProjet->setProjetElectrification($this); } return $this; }
     public function removePhaseProjet(PhaseProjet $phaseProjet): static { if ($this->phasesProjet->removeElement($phaseProjet) && $phaseProjet->getProjetElectrification() === $this) { $phaseProjet->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, ValeurIndicateur> */
+    public function getValeursIndicateur(): Collection { return $this->valeursIndicateur; }
+    public function addValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if (!$this->valeursIndicateur->contains($valeurIndicateur)) { $this->valeursIndicateur->add($valeurIndicateur); $valeurIndicateur->setProjetElectrification($this); } return $this; }
+    public function removeValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if ($this->valeursIndicateur->removeElement($valeurIndicateur) && $valeurIndicateur->getProjetElectrification() === $this) { $valeurIndicateur->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, RapportSuivi> */
+    public function getRapportsSuivi(): Collection { return $this->rapportsSuivi; }
+    public function addRapportSuivi(RapportSuivi $rapportSuivi): static { if (!$this->rapportsSuivi->contains($rapportSuivi)) { $this->rapportsSuivi->add($rapportSuivi); $rapportSuivi->setProjetElectrification($this); } return $this; }
+    public function removeRapportSuivi(RapportSuivi $rapportSuivi): static { if ($this->rapportsSuivi->removeElement($rapportSuivi) && $rapportSuivi->getProjetElectrification() === $this) { $rapportSuivi->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, ObservationSuivi> */
+    public function getObservationsSuivi(): Collection { return $this->observationsSuivi; }
+    public function addObservationSuivi(ObservationSuivi $observationSuivi): static { if (!$this->observationsSuivi->contains($observationSuivi)) { $this->observationsSuivi->add($observationSuivi); $observationSuivi->setProjetElectrification($this); } return $this; }
+    public function removeObservationSuivi(ObservationSuivi $observationSuivi): static { if ($this->observationsSuivi->removeElement($observationSuivi) && $observationSuivi->getProjetElectrification() === $this) { $observationSuivi->setProjetElectrification(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

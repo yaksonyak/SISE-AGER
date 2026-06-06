@@ -98,7 +98,15 @@ class Zer
     #[ORM\OneToMany(mappedBy: 'zer', targetEntity: ProjetElectrification::class)]
     private Collection $projetsElectrification;
 
-    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); $this->projetsElectrification = new ArrayCollection(); }
+    /** @var Collection<int, ValeurIndicateur> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: ValeurIndicateur::class)]
+    private Collection $valeursIndicateur;
+
+    /** @var Collection<int, RapportSuivi> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: RapportSuivi::class)]
+    private Collection $rapportsSuivi;
+
+    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); $this->projetsElectrification = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
     public function setNom(string $nom): static { $this->nom = trim($nom); return $this; }
@@ -134,6 +142,14 @@ class Zer
     public function getProjetsElectrification(): Collection { return $this->projetsElectrification; }
     public function addProjetElectrification(ProjetElectrification $projetElectrification): static { if (!$this->projetsElectrification->contains($projetElectrification)) { $this->projetsElectrification->add($projetElectrification); $projetElectrification->setZer($this); } return $this; }
     public function removeProjetElectrification(ProjetElectrification $projetElectrification): static { if ($this->projetsElectrification->removeElement($projetElectrification) && $projetElectrification->getZer() === $this) { $projetElectrification->setZer(null); } return $this; }
+    /** @return Collection<int, ValeurIndicateur> */
+    public function getValeursIndicateur(): Collection { return $this->valeursIndicateur; }
+    public function addValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if (!$this->valeursIndicateur->contains($valeurIndicateur)) { $this->valeursIndicateur->add($valeurIndicateur); $valeurIndicateur->setZer($this); } return $this; }
+    public function removeValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if ($this->valeursIndicateur->removeElement($valeurIndicateur) && $valeurIndicateur->getZer() === $this) { $valeurIndicateur->setZer(null); } return $this; }
+    /** @return Collection<int, RapportSuivi> */
+    public function getRapportsSuivi(): Collection { return $this->rapportsSuivi; }
+    public function addRapportSuivi(RapportSuivi $rapportSuivi): static { if (!$this->rapportsSuivi->contains($rapportSuivi)) { $this->rapportsSuivi->add($rapportSuivi); $rapportSuivi->setZer($this); } return $this; }
+    public function removeRapportSuivi(RapportSuivi $rapportSuivi): static { if ($this->rapportsSuivi->removeElement($rapportSuivi) && $rapportSuivi->getZer() === $this) { $rapportSuivi->setZer(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

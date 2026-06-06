@@ -133,8 +133,12 @@ Les référentiels métier PNER sont exposés par API Platform et consultables d
 | Infrastructures électriques | `/api/infrastructure_electriques` | Postes, lignes, mini-réseaux, centrales et stockage géolocalisés |
 | Sites énergétiques | `/api/site_energetiques` | Sites solaires, hydro, hybrides, diesel ou stockage |
 | Données géospatiales localité | `/api/donnee_geospatiale_localites` | Indicateurs géospatiaux rattachés aux localités rurales |
+| Indicateurs PNER | `/api/indicateur_pners` | Référentiel des indicateurs du suivi-évaluation SSE |
+| Valeurs d’indicateur | `/api/valeur_indicateurs` | Mesures périodiques des indicateurs par programme, ZER, projet ou localité |
+| Rapports de suivi | `/api/rapport_suivis` | Rapports mensuels, trimestriels, annuels, projet ou ZER |
+| Observations de suivi | `/api/observation_suivis` | Observations, alertes et points de vigilance SSE |
 
-Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, ainsi que des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration.
+Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration, ainsi que des indicateurs, valeurs, rapports et observations SSE.
 
 ## Commandes utiles
 

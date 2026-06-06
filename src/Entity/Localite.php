@@ -117,7 +117,15 @@ class Localite
     #[ORM\OneToMany(mappedBy: 'localite', targetEntity: DonneeGeospatialeLocalite::class)]
     private Collection $donneesGeospatiales;
 
-    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->infrastructuresElectriques = new ArrayCollection(); $this->sitesEnergetiques = new ArrayCollection(); $this->donneesGeospatiales = new ArrayCollection(); }
+    /** @var Collection<int, ValeurIndicateur> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ValeurIndicateur::class)]
+    private Collection $valeursIndicateur;
+
+    /** @var Collection<int, ObservationSuivi> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ObservationSuivi::class)]
+    private Collection $observationsSuivi;
+
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->infrastructuresElectriques = new ArrayCollection(); $this->sitesEnergetiques = new ArrayCollection(); $this->donneesGeospatiales = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); }
 
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
@@ -166,6 +174,14 @@ class Localite
     public function getDonneesGeospatiales(): Collection { return $this->donneesGeospatiales; }
     public function addDonneeGeospatiale(DonneeGeospatialeLocalite $donneeGeospatiale): static { if (!$this->donneesGeospatiales->contains($donneeGeospatiale)) { $this->donneesGeospatiales->add($donneeGeospatiale); $donneeGeospatiale->setLocalite($this); } return $this; }
     public function removeDonneeGeospatiale(DonneeGeospatialeLocalite $donneeGeospatiale): static { if ($this->donneesGeospatiales->removeElement($donneeGeospatiale) && $donneeGeospatiale->getLocalite() === $this) { $donneeGeospatiale->setLocalite(null); } return $this; }
+    /** @return Collection<int, ValeurIndicateur> */
+    public function getValeursIndicateur(): Collection { return $this->valeursIndicateur; }
+    public function addValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if (!$this->valeursIndicateur->contains($valeurIndicateur)) { $this->valeursIndicateur->add($valeurIndicateur); $valeurIndicateur->setLocalite($this); } return $this; }
+    public function removeValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if ($this->valeursIndicateur->removeElement($valeurIndicateur) && $valeurIndicateur->getLocalite() === $this) { $valeurIndicateur->setLocalite(null); } return $this; }
+    /** @return Collection<int, ObservationSuivi> */
+    public function getObservationsSuivi(): Collection { return $this->observationsSuivi; }
+    public function addObservationSuivi(ObservationSuivi $observationSuivi): static { if (!$this->observationsSuivi->contains($observationSuivi)) { $this->observationsSuivi->add($observationSuivi); $observationSuivi->setLocalite($this); } return $this; }
+    public function removeObservationSuivi(ObservationSuivi $observationSuivi): static { if ($this->observationsSuivi->removeElement($observationSuivi) && $observationSuivi->getLocalite() === $this) { $observationSuivi->setLocalite(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

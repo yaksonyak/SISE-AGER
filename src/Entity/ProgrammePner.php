@@ -86,10 +86,20 @@ class ProgrammePner
     #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: ProjetElectrification::class)]
     private Collection $projetsElectrification;
 
+    /** @var Collection<int, ValeurIndicateur> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: ValeurIndicateur::class)]
+    private Collection $valeursIndicateur;
+
+    /** @var Collection<int, RapportSuivi> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: RapportSuivi::class)]
+    private Collection $rapportsSuivi;
+
     public function __construct()
     {
         $this->localites = new ArrayCollection();
         $this->projetsElectrification = new ArrayCollection();
+        $this->valeursIndicateur = new ArrayCollection();
+        $this->rapportsSuivi = new ArrayCollection();
     }
 
     public function getId(): ?int { return $this->id; }
@@ -120,6 +130,14 @@ class ProgrammePner
     public function getProjetsElectrification(): Collection { return $this->projetsElectrification; }
     public function addProjetElectrification(ProjetElectrification $projetElectrification): static { if (!$this->projetsElectrification->contains($projetElectrification)) { $this->projetsElectrification->add($projetElectrification); $projetElectrification->setProgrammePner($this); } return $this; }
     public function removeProjetElectrification(ProjetElectrification $projetElectrification): static { if ($this->projetsElectrification->removeElement($projetElectrification) && $projetElectrification->getProgrammePner() === $this) { $projetElectrification->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, ValeurIndicateur> */
+    public function getValeursIndicateur(): Collection { return $this->valeursIndicateur; }
+    public function addValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if (!$this->valeursIndicateur->contains($valeurIndicateur)) { $this->valeursIndicateur->add($valeurIndicateur); $valeurIndicateur->setProgrammePner($this); } return $this; }
+    public function removeValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if ($this->valeursIndicateur->removeElement($valeurIndicateur) && $valeurIndicateur->getProgrammePner() === $this) { $valeurIndicateur->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, RapportSuivi> */
+    public function getRapportsSuivi(): Collection { return $this->rapportsSuivi; }
+    public function addRapportSuivi(RapportSuivi $rapportSuivi): static { if (!$this->rapportsSuivi->contains($rapportSuivi)) { $this->rapportsSuivi->add($rapportSuivi); $rapportSuivi->setProgrammePner($this); } return $this; }
+    public function removeRapportSuivi(RapportSuivi $rapportSuivi): static { if ($this->rapportsSuivi->removeElement($rapportSuivi) && $rapportSuivi->getProgrammePner() === $this) { $rapportSuivi->setProgrammePner(null); } return $this; }
 
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
