@@ -137,8 +137,13 @@ Les référentiels métier PNER sont exposés par API Platform et consultables d
 | Valeurs d’indicateur | `/api/valeur_indicateurs` | Mesures périodiques des indicateurs par programme, ZER, projet ou localité |
 | Rapports de suivi | `/api/rapport_suivis` | Rapports mensuels, trimestriels, annuels, projet ou ZER |
 | Observations de suivi | `/api/observation_suivis` | Observations, alertes et points de vigilance SSE |
+| Bailleurs de fonds | `/api/bailleur_fonds` | Référentiel des bailleurs, partenaires, banques et fonds climat |
+| Sources de financement | `/api/source_financements` | Budget État, dons, prêts, PPP, subventions et autres sources |
+| Conventions de financement | `/api/convention_financements` | Engagements et conventions liés aux programmes et projets PNER |
+| Décaissements | `/api/decaissements` | Suivi des décaissements par convention et projet |
+| Coûts prévisionnels | `/api/cout_previsionnels` | Prévisions de coûts par programme, projet, ZER et catégorie |
 
-Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration, ainsi que des indicateurs, valeurs, rapports et observations SSE.
+Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration, des indicateurs, valeurs, rapports et observations SSE, ainsi que des bailleurs, sources, conventions, décaissements et coûts prévisionnels de démonstration.
 
 ## Commandes utiles
 

@@ -150,7 +150,19 @@ class ProjetElectrification
     #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: ObservationSuivi::class)]
     private Collection $observationsSuivi;
 
-    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); }
+    /** @var Collection<int, ConventionFinancement> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: ConventionFinancement::class)]
+    private Collection $conventionsFinancement;
+
+    /** @var Collection<int, Decaissement> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: Decaissement::class)]
+    private Collection $decaissements;
+
+    /** @var Collection<int, CoutPrevisionnel> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: CoutPrevisionnel::class)]
+    private Collection $coutsPrevisionnels;
+
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); $this->conventionsFinancement = new ArrayCollection(); $this->decaissements = new ArrayCollection(); $this->coutsPrevisionnels = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getCode(): ?string { return $this->code; }
     public function setCode(string $code): static { $this->code = mb_strtoupper(trim($code)); return $this; }
@@ -206,6 +218,18 @@ class ProjetElectrification
     public function getObservationsSuivi(): Collection { return $this->observationsSuivi; }
     public function addObservationSuivi(ObservationSuivi $observationSuivi): static { if (!$this->observationsSuivi->contains($observationSuivi)) { $this->observationsSuivi->add($observationSuivi); $observationSuivi->setProjetElectrification($this); } return $this; }
     public function removeObservationSuivi(ObservationSuivi $observationSuivi): static { if ($this->observationsSuivi->removeElement($observationSuivi) && $observationSuivi->getProjetElectrification() === $this) { $observationSuivi->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, ConventionFinancement> */
+    public function getConventionsFinancement(): Collection { return $this->conventionsFinancement; }
+    public function addConventionFinancement(ConventionFinancement $conventionFinancement): static { if (!$this->conventionsFinancement->contains($conventionFinancement)) { $this->conventionsFinancement->add($conventionFinancement); $conventionFinancement->setProjetElectrification($this); } return $this; }
+    public function removeConventionFinancement(ConventionFinancement $conventionFinancement): static { if ($this->conventionsFinancement->removeElement($conventionFinancement) && $conventionFinancement->getProjetElectrification() === $this) { $conventionFinancement->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, Decaissement> */
+    public function getDecaissements(): Collection { return $this->decaissements; }
+    public function addDecaissement(Decaissement $decaissement): static { if (!$this->decaissements->contains($decaissement)) { $this->decaissements->add($decaissement); $decaissement->setProjetElectrification($this); } return $this; }
+    public function removeDecaissement(Decaissement $decaissement): static { if ($this->decaissements->removeElement($decaissement) && $decaissement->getProjetElectrification() === $this) { $decaissement->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, CoutPrevisionnel> */
+    public function getCoutsPrevisionnels(): Collection { return $this->coutsPrevisionnels; }
+    public function addCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if (!$this->coutsPrevisionnels->contains($coutPrevisionnel)) { $this->coutsPrevisionnels->add($coutPrevisionnel); $coutPrevisionnel->setProjetElectrification($this); } return $this; }
+    public function removeCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if ($this->coutsPrevisionnels->removeElement($coutPrevisionnel) && $coutPrevisionnel->getProjetElectrification() === $this) { $coutPrevisionnel->setProjetElectrification(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

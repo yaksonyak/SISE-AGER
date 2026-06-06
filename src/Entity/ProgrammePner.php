@@ -94,12 +94,22 @@ class ProgrammePner
     #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: RapportSuivi::class)]
     private Collection $rapportsSuivi;
 
+    /** @var Collection<int, ConventionFinancement> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: ConventionFinancement::class)]
+    private Collection $conventionsFinancement;
+
+    /** @var Collection<int, CoutPrevisionnel> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: CoutPrevisionnel::class)]
+    private Collection $coutsPrevisionnels;
+
     public function __construct()
     {
         $this->localites = new ArrayCollection();
         $this->projetsElectrification = new ArrayCollection();
         $this->valeursIndicateur = new ArrayCollection();
         $this->rapportsSuivi = new ArrayCollection();
+        $this->conventionsFinancement = new ArrayCollection();
+        $this->coutsPrevisionnels = new ArrayCollection();
     }
 
     public function getId(): ?int { return $this->id; }
@@ -138,6 +148,14 @@ class ProgrammePner
     public function getRapportsSuivi(): Collection { return $this->rapportsSuivi; }
     public function addRapportSuivi(RapportSuivi $rapportSuivi): static { if (!$this->rapportsSuivi->contains($rapportSuivi)) { $this->rapportsSuivi->add($rapportSuivi); $rapportSuivi->setProgrammePner($this); } return $this; }
     public function removeRapportSuivi(RapportSuivi $rapportSuivi): static { if ($this->rapportsSuivi->removeElement($rapportSuivi) && $rapportSuivi->getProgrammePner() === $this) { $rapportSuivi->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, ConventionFinancement> */
+    public function getConventionsFinancement(): Collection { return $this->conventionsFinancement; }
+    public function addConventionFinancement(ConventionFinancement $conventionFinancement): static { if (!$this->conventionsFinancement->contains($conventionFinancement)) { $this->conventionsFinancement->add($conventionFinancement); $conventionFinancement->setProgrammePner($this); } return $this; }
+    public function removeConventionFinancement(ConventionFinancement $conventionFinancement): static { if ($this->conventionsFinancement->removeElement($conventionFinancement) && $conventionFinancement->getProgrammePner() === $this) { $conventionFinancement->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, CoutPrevisionnel> */
+    public function getCoutsPrevisionnels(): Collection { return $this->coutsPrevisionnels; }
+    public function addCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if (!$this->coutsPrevisionnels->contains($coutPrevisionnel)) { $this->coutsPrevisionnels->add($coutPrevisionnel); $coutPrevisionnel->setProgrammePner($this); } return $this; }
+    public function removeCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if ($this->coutsPrevisionnels->removeElement($coutPrevisionnel) && $coutPrevisionnel->getProgrammePner() === $this) { $coutPrevisionnel->setProgrammePner(null); } return $this; }
 
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
