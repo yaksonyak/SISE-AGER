@@ -125,8 +125,12 @@ Les référentiels métier PNER sont exposés par API Platform et consultables d
 | Sous-préfectures | `/api/sous_prefectures` | Sous-préfectures rattachées aux préfectures |
 | Localités | `/api/localites` | Localités rurales à électrifier et rattachements PNER |
 | Systèmes d’électrification | `/api/systeme_electrifications` | Référentiel des solutions techniques d’électrification |
+| Projets d’électrification | `/api/projet_electrifications` | Projets ruraux rattachés aux programmes PNER, ZER et systèmes techniques |
+| Localités de projet | `/api/projet_localites` | Association des localités aux projets et suivi du raccordement |
+| Phases de projet | `/api/phase_projets` | Phasage opérationnel des projets d’électrification |
+| Activités de projet | `/api/activite_projets` | Activités détaillées et taux d’exécution par phase |
 
-Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités et des systèmes d’électrification.
+Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées.
 
 ## Commandes utiles
 

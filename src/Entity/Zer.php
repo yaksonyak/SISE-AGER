@@ -94,7 +94,11 @@ class Zer
     #[ORM\OneToMany(mappedBy: 'zer', targetEntity: Localite::class)]
     private Collection $localites;
 
-    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); }
+    /** @var Collection<int, ProjetElectrification> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: ProjetElectrification::class)]
+    private Collection $projetsElectrification;
+
+    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); $this->projetsElectrification = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
     public function setNom(string $nom): static { $this->nom = trim($nom); return $this; }
@@ -126,6 +130,10 @@ class Zer
     public function getLocalites(): Collection { return $this->localites; }
     public function addLocalite(Localite $localite): static { if (!$this->localites->contains($localite)) { $this->localites->add($localite); $localite->setZer($this); } return $this; }
     public function removeLocalite(Localite $localite): static { if ($this->localites->removeElement($localite) && $localite->getZer() === $this) { $localite->setZer(null); } return $this; }
+    /** @return Collection<int, ProjetElectrification> */
+    public function getProjetsElectrification(): Collection { return $this->projetsElectrification; }
+    public function addProjetElectrification(ProjetElectrification $projetElectrification): static { if (!$this->projetsElectrification->contains($projetElectrification)) { $this->projetsElectrification->add($projetElectrification); $projetElectrification->setZer($this); } return $this; }
+    public function removeProjetElectrification(ProjetElectrification $projetElectrification): static { if ($this->projetsElectrification->removeElement($projetElectrification) && $projetElectrification->getZer() === $this) { $projetElectrification->setZer(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

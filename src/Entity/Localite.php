@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use App\Repository\LocaliteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -99,6 +101,12 @@ class Localite
     #[Groups(['localite:read'])]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    /** @var Collection<int, ProjetLocalite> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ProjetLocalite::class)]
+    private Collection $projetLocalites;
+
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); }
+
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
     public function setNom(string $nom): static { $this->nom = trim($nom); return $this; }
@@ -130,6 +138,10 @@ class Localite
     public function setSystemeElectrification(?SystemeElectrification $systemeElectrification): static { $this->systemeElectrification = $systemeElectrification; return $this; }
     public function getCreatedAt(): ?\DateTimeImmutable { return $this->createdAt; }
     public function getUpdatedAt(): ?\DateTimeImmutable { return $this->updatedAt; }
+    /** @return Collection<int, ProjetLocalite> */
+    public function getProjetLocalites(): Collection { return $this->projetLocalites; }
+    public function addProjetLocalite(ProjetLocalite $projetLocalite): static { if (!$this->projetLocalites->contains($projetLocalite)) { $this->projetLocalites->add($projetLocalite); $projetLocalite->setLocalite($this); } return $this; }
+    public function removeProjetLocalite(ProjetLocalite $projetLocalite): static { if ($this->projetLocalites->removeElement($projetLocalite) && $projetLocalite->getLocalite() === $this) { $projetLocalite->setLocalite(null); } return $this; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

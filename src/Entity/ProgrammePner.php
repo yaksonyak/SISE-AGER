@@ -82,9 +82,14 @@ class ProgrammePner
     #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: Localite::class)]
     private Collection $localites;
 
+    /** @var Collection<int, ProjetElectrification> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: ProjetElectrification::class)]
+    private Collection $projetsElectrification;
+
     public function __construct()
     {
         $this->localites = new ArrayCollection();
+        $this->projetsElectrification = new ArrayCollection();
     }
 
     public function getId(): ?int { return $this->id; }
@@ -111,6 +116,10 @@ class ProgrammePner
     public function getLocalites(): Collection { return $this->localites; }
     public function addLocalite(Localite $localite): static { if (!$this->localites->contains($localite)) { $this->localites->add($localite); $localite->setProgrammePner($this); } return $this; }
     public function removeLocalite(Localite $localite): static { if ($this->localites->removeElement($localite) && $localite->getProgrammePner() === $this) { $localite->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, ProjetElectrification> */
+    public function getProjetsElectrification(): Collection { return $this->projetsElectrification; }
+    public function addProjetElectrification(ProjetElectrification $projetElectrification): static { if (!$this->projetsElectrification->contains($projetElectrification)) { $this->projetsElectrification->add($projetElectrification); $projetElectrification->setProgrammePner($this); } return $this; }
+    public function removeProjetElectrification(ProjetElectrification $projetElectrification): static { if ($this->projetsElectrification->removeElement($projetElectrification) && $projetElectrification->getProgrammePner() === $this) { $projetElectrification->setProgrammePner(null); } return $this; }
 
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
