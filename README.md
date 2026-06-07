@@ -145,6 +145,42 @@ Les référentiels métier PNER sont exposés par API Platform et consultables d
 
 Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration, des indicateurs, valeurs, rapports et observations SSE, ainsi que des bailleurs, sources, conventions, décaissements et coûts prévisionnels de démonstration.
 
+
+## Relations API en identifiants simples
+
+Les relations métier API Platform sont sérialisées avec des identifiants numériques simples afin de faciliter l’intégration front. Les payloads peuvent donc utiliser `programmePner: 1` au lieu de l’IRI `/api/programme_pners/1`.
+
+Exemple de lecture d’un projet d’électrification :
+
+```json
+{
+  "id": 1,
+  "code": "PRJ-PUERG-KDA-001",
+  "intitule": "Électrification rurale prioritaire de la zone de Kindia",
+  "programmePner": 1,
+  "zer": 1,
+  "systemeElectrification": 1,
+  "statut": "EN_PREPARATION"
+}
+```
+
+Exemple de création avec relations sous forme d’IDs :
+
+```json
+{
+  "code": "PRJ-TEST-001",
+  "intitule": "Projet test",
+  "programmePner": 1,
+  "zer": 1,
+  "systemeElectrification": 1,
+  "statut": "PLANIFIE",
+  "dateDebutPrevue": "2026-01-01",
+  "dateFinPrevue": "2026-12-31"
+}
+```
+
+Les alias `*Id` sont également acceptés en écriture pour les relations principales. Par exemple `programmePnerId: 1` est converti vers la relation `programmePner`.
+
 ## Commandes utiles
 
 ```bash
