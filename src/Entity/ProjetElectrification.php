@@ -162,7 +162,19 @@ class ProjetElectrification
     #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: CoutPrevisionnel::class)]
     private Collection $coutsPrevisionnels;
 
-    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); $this->conventionsFinancement = new ArrayCollection(); $this->decaissements = new ArrayCollection(); $this->coutsPrevisionnels = new ArrayCollection(); }
+    /** @var Collection<int, ActionGenre> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: ActionGenre::class)]
+    private Collection $actionsGenre;
+
+    /** @var Collection<int, BeneficiaireGenre> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: BeneficiaireGenre::class)]
+    private Collection $beneficiairesGenre;
+
+    /** @var Collection<int, IndicateurGenre> */
+    #[ORM\OneToMany(mappedBy: 'projetElectrification', targetEntity: IndicateurGenre::class)]
+    private Collection $indicateursGenre;
+
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->phasesProjet = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); $this->conventionsFinancement = new ArrayCollection(); $this->decaissements = new ArrayCollection(); $this->coutsPrevisionnels = new ArrayCollection(); $this->actionsGenre = new ArrayCollection(); $this->beneficiairesGenre = new ArrayCollection(); $this->indicateursGenre = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getCode(): ?string { return $this->code; }
     public function setCode(string $code): static { $this->code = mb_strtoupper(trim($code)); return $this; }
@@ -230,6 +242,14 @@ class ProjetElectrification
     public function getCoutsPrevisionnels(): Collection { return $this->coutsPrevisionnels; }
     public function addCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if (!$this->coutsPrevisionnels->contains($coutPrevisionnel)) { $this->coutsPrevisionnels->add($coutPrevisionnel); $coutPrevisionnel->setProjetElectrification($this); } return $this; }
     public function removeCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if ($this->coutsPrevisionnels->removeElement($coutPrevisionnel) && $coutPrevisionnel->getProjetElectrification() === $this) { $coutPrevisionnel->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, ActionGenre> */
+    public function getActionsGenre(): Collection { return $this->actionsGenre; }
+    public function addActionGenre(ActionGenre $actionGenre): static { if (!$this->actionsGenre->contains($actionGenre)) { $this->actionsGenre->add($actionGenre); $actionGenre->setProjetElectrification($this); } return $this; }
+    public function removeActionGenre(ActionGenre $actionGenre): static { if ($this->actionsGenre->removeElement($actionGenre) && $actionGenre->getProjetElectrification() === $this) { $actionGenre->setProjetElectrification(null); } return $this; }
+    /** @return Collection<int, BeneficiaireGenre> */
+    public function getBeneficiairesGenre(): Collection { return $this->beneficiairesGenre; }
+    /** @return Collection<int, IndicateurGenre> */
+    public function getIndicateursGenre(): Collection { return $this->indicateursGenre; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]

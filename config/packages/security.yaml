@@ -37,7 +37,7 @@ security:
     access_control:
         - { path: ^/api/login_check$, roles: PUBLIC_ACCESS }
         # Ouverture temporaire pour la phase de développement métier PNER :
-        # les référentiels, les modules projet, SIG, SSE et financement API Platform sont consultables sans JWT.
+        # les référentiels, les modules projet, SIG, SSE, financement et genre/inclusion API Platform sont consultables sans JWT.
         - { path: ^/api/docs, roles: PUBLIC_ACCESS }
         - { path: ^/api/programme_pners, roles: PUBLIC_ACCESS }
         - { path: ^/api/zers, roles: PUBLIC_ACCESS }
@@ -62,6 +62,11 @@ security:
         - { path: ^/api/convention_financements, roles: PUBLIC_ACCESS }
         - { path: ^/api/decaissements, roles: PUBLIC_ACCESS }
         - { path: ^/api/cout_previsionnels, roles: PUBLIC_ACCESS }
+        - { path: ^/api/action_genres, roles: PUBLIC_ACCESS }
+        - { path: ^/api/beneficiaire_genres, roles: PUBLIC_ACCESS }
+        - { path: ^/api/formation_genres, roles: PUBLIC_ACCESS }
+        - { path: ^/api/indicateur_genres, roles: PUBLIC_ACCESS }
+        - { path: ^/api/comite_genres, roles: PUBLIC_ACCESS }
         - { path: ^/api/?$, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 

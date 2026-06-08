@@ -117,6 +117,22 @@ class Localite
     #[ORM\OneToMany(mappedBy: 'localite', targetEntity: DonneeGeospatialeLocalite::class)]
     private Collection $donneesGeospatiales;
 
+    /** @var Collection<int, ActionGenre> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ActionGenre::class)]
+    private Collection $actionsGenre;
+
+    /** @var Collection<int, BeneficiaireGenre> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: BeneficiaireGenre::class)]
+    private Collection $beneficiairesGenre;
+
+    /** @var Collection<int, FormationGenre> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: FormationGenre::class)]
+    private Collection $formationsGenre;
+
+    /** @var Collection<int, ComiteGenre> */
+    #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ComiteGenre::class)]
+    private Collection $comitesGenre;
+
     /** @var Collection<int, ValeurIndicateur> */
     #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ValeurIndicateur::class)]
     private Collection $valeursIndicateur;
@@ -125,7 +141,7 @@ class Localite
     #[ORM\OneToMany(mappedBy: 'localite', targetEntity: ObservationSuivi::class)]
     private Collection $observationsSuivi;
 
-    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->infrastructuresElectriques = new ArrayCollection(); $this->sitesEnergetiques = new ArrayCollection(); $this->donneesGeospatiales = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); }
+    public function __construct() { $this->projetLocalites = new ArrayCollection(); $this->infrastructuresElectriques = new ArrayCollection(); $this->sitesEnergetiques = new ArrayCollection(); $this->donneesGeospatiales = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->observationsSuivi = new ArrayCollection(); $this->actionsGenre = new ArrayCollection(); $this->beneficiairesGenre = new ArrayCollection(); $this->formationsGenre = new ArrayCollection(); $this->comitesGenre = new ArrayCollection(); }
 
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
@@ -174,6 +190,10 @@ class Localite
     public function getDonneesGeospatiales(): Collection { return $this->donneesGeospatiales; }
     public function addDonneeGeospatiale(DonneeGeospatialeLocalite $donneeGeospatiale): static { if (!$this->donneesGeospatiales->contains($donneeGeospatiale)) { $this->donneesGeospatiales->add($donneeGeospatiale); $donneeGeospatiale->setLocalite($this); } return $this; }
     public function removeDonneeGeospatiale(DonneeGeospatialeLocalite $donneeGeospatiale): static { if ($this->donneesGeospatiales->removeElement($donneeGeospatiale) && $donneeGeospatiale->getLocalite() === $this) { $donneeGeospatiale->setLocalite(null); } return $this; }
+    /** @return Collection<int, ActionGenre> */ public function getActionsGenre(): Collection { return $this->actionsGenre; }
+    /** @return Collection<int, BeneficiaireGenre> */ public function getBeneficiairesGenre(): Collection { return $this->beneficiairesGenre; }
+    /** @return Collection<int, FormationGenre> */ public function getFormationsGenre(): Collection { return $this->formationsGenre; }
+    /** @return Collection<int, ComiteGenre> */ public function getComitesGenre(): Collection { return $this->comitesGenre; }
     /** @return Collection<int, ValeurIndicateur> */
     public function getValeursIndicateur(): Collection { return $this->valeursIndicateur; }
     public function addValeurIndicateur(ValeurIndicateur $valeurIndicateur): static { if (!$this->valeursIndicateur->contains($valeurIndicateur)) { $this->valeursIndicateur->add($valeurIndicateur); $valeurIndicateur->setLocalite($this); } return $this; }

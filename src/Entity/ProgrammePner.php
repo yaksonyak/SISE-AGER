@@ -102,6 +102,10 @@ class ProgrammePner
     #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: CoutPrevisionnel::class)]
     private Collection $coutsPrevisionnels;
 
+    /** @var Collection<int, ActionGenre> */
+    #[ORM\OneToMany(mappedBy: 'programmePner', targetEntity: ActionGenre::class)]
+    private Collection $actionsGenre;
+
     public function __construct()
     {
         $this->localites = new ArrayCollection();
@@ -110,6 +114,7 @@ class ProgrammePner
         $this->rapportsSuivi = new ArrayCollection();
         $this->conventionsFinancement = new ArrayCollection();
         $this->coutsPrevisionnels = new ArrayCollection();
+        $this->actionsGenre = new ArrayCollection();
     }
 
     public function getId(): ?int { return $this->id; }
@@ -156,6 +161,10 @@ class ProgrammePner
     public function getCoutsPrevisionnels(): Collection { return $this->coutsPrevisionnels; }
     public function addCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if (!$this->coutsPrevisionnels->contains($coutPrevisionnel)) { $this->coutsPrevisionnels->add($coutPrevisionnel); $coutPrevisionnel->setProgrammePner($this); } return $this; }
     public function removeCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if ($this->coutsPrevisionnels->removeElement($coutPrevisionnel) && $coutPrevisionnel->getProgrammePner() === $this) { $coutPrevisionnel->setProgrammePner(null); } return $this; }
+    /** @return Collection<int, ActionGenre> */
+    public function getActionsGenre(): Collection { return $this->actionsGenre; }
+    public function addActionGenre(ActionGenre $actionGenre): static { if (!$this->actionsGenre->contains($actionGenre)) { $this->actionsGenre->add($actionGenre); $actionGenre->setProgrammePner($this); } return $this; }
+    public function removeActionGenre(ActionGenre $actionGenre): static { if ($this->actionsGenre->removeElement($actionGenre) && $actionGenre->getProgrammePner() === $this) { $actionGenre->setProgrammePner(null); } return $this; }
 
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }

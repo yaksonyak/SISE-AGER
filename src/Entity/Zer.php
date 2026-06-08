@@ -110,7 +110,19 @@ class Zer
     #[ORM\OneToMany(mappedBy: 'zer', targetEntity: CoutPrevisionnel::class)]
     private Collection $coutsPrevisionnels;
 
-    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); $this->projetsElectrification = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->coutsPrevisionnels = new ArrayCollection(); }
+    /** @var Collection<int, ActionGenre> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: ActionGenre::class)]
+    private Collection $actionsGenre;
+
+    /** @var Collection<int, FormationGenre> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: FormationGenre::class)]
+    private Collection $formationsGenre;
+
+    /** @var Collection<int, ComiteGenre> */
+    #[ORM\OneToMany(mappedBy: 'zer', targetEntity: ComiteGenre::class)]
+    private Collection $comitesGenre;
+
+    public function __construct() { $this->prefectures = new ArrayCollection(); $this->localites = new ArrayCollection(); $this->projetsElectrification = new ArrayCollection(); $this->valeursIndicateur = new ArrayCollection(); $this->rapportsSuivi = new ArrayCollection(); $this->coutsPrevisionnels = new ArrayCollection(); $this->actionsGenre = new ArrayCollection(); $this->formationsGenre = new ArrayCollection(); $this->comitesGenre = new ArrayCollection(); }
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
     public function setNom(string $nom): static { $this->nom = trim($nom); return $this; }
@@ -158,6 +170,9 @@ class Zer
     public function getCoutsPrevisionnels(): Collection { return $this->coutsPrevisionnels; }
     public function addCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if (!$this->coutsPrevisionnels->contains($coutPrevisionnel)) { $this->coutsPrevisionnels->add($coutPrevisionnel); $coutPrevisionnel->setZer($this); } return $this; }
     public function removeCoutPrevisionnel(CoutPrevisionnel $coutPrevisionnel): static { if ($this->coutsPrevisionnels->removeElement($coutPrevisionnel) && $coutPrevisionnel->getZer() === $this) { $coutPrevisionnel->setZer(null); } return $this; }
+    /** @return Collection<int, ActionGenre> */ public function getActionsGenre(): Collection { return $this->actionsGenre; }
+    /** @return Collection<int, FormationGenre> */ public function getFormationsGenre(): Collection { return $this->formationsGenre; }
+    /** @return Collection<int, ComiteGenre> */ public function getComitesGenre(): Collection { return $this->comitesGenre; }
     #[ORM\PrePersist]
     public function initializeTimestamps(): void { $now = new \DateTimeImmutable(); $this->createdAt ??= $now; $this->updatedAt = $now; }
     #[ORM\PreUpdate]
