@@ -1,0 +1,3 @@
+code,nom,type_site,localite_code,point_code,puissance_installee_kw,statut,commentaire
+SITE-KOUROUSSA-MT-001,Site raccordement Kouroussa,HYBRIDE,LOC-KOUROUSSA-001,GPS-KOUROUSSA-001,150,PLANIFIE,Site de raccordement prioritaire
+SITE-SOUGUETA-PV-001,Site solaire Sougueta,SOLAIRE,LOC-SOUGUETA-001,GPS-SOUGUETA-001,250,PLANIFIE,Site solaire PV prioritaire

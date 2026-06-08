@@ -1,0 +1,3 @@
+code,nom,longitude,latitude,nombre_menages,population_totale,categorie_population,statut_electrification,distance_reseau_km,zer_code,prefecture_code,sous_prefecture_code,programme_code,systeme_code
+LOC-KOUROUSSA-001,Kouroussa Centre,-9.8833,10.6500,240,1450,PLUS_800_HABITANTS,NON_ELECTRIFIEE,18.5,ZER-KANKAN,PREF-KANKAN,SP-KOUROUSSA,PUERG,EXT-30KV
+LOC-SOUGUETA-001,Koliady,-13.0167,9.7533,185,1120,PLUS_800_HABITANTS,NON_ELECTRIFIEE,22.0,ZER-KINDIA,PREF-KINDIA,SP-SOUGUETA,PERMT,PV-CENTRALISE

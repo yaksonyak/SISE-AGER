@@ -1,0 +1,4 @@
+code,nom,periode_debut,periode_fin,nombre_localites_prevues,taux_electrification_cible,montant_previsionnel_usd,description
+PUERG,Programme d'Urgence d'Electrification Rurale de Guinee,2023,2027,1200,35,150000000,Programme prioritaire PNER 2040
+PERMT,Programme d'Electrification Rurale a Moyen Terme,2028,2033,2400,55,320000000,Programme moyen terme PNER 2040
+PFAUER,Programme Final d'Acces Universel a l'Electricite Rurale,2034,2040,3800,100,610000000,Programme final PNER 2040

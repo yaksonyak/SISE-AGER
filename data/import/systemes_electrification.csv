@@ -1,0 +1,4 @@
+code,nom,type,description,tension_kv,rayon_km,source_energie
+EXT-30KV,Extension reseau MT 30 kV,EXTENSION_RESEAU_MT_30KV,Extension reseau moyenne tension,30,20,Reseau interconnecte
+PV-CENTRALISE,Mini-reseau solaire PV centralise,SOLAIRE_PV_CENTRALISE,Production solaire centralisee,,5,Solaire PV
+HYBRIDE-PV-HYDRO,Systeme hybride PV hydro,HYBRIDE_PV_HYDRO,Systeme hybride pour zones isolees,,8,Solaire et hydro
