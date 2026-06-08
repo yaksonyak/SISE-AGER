@@ -1,0 +1,3 @@
+code,libelle,description,type_indicateur,unite,valeur_reference,valeur_cible,frequence_suivi,source_donnee
+IND-LOCALITES-ELEC,Localites electrifiees,Nombre de localites rurales electrifiees,LOCALITES_ELECTRIFIEES,localites,0,1200,TRIMESTRIELLE,SSE PNER
+IND-MENAGES-RACC,Menages raccordes,Nombre de menages raccordes,MENAGES_RACCORDES,menages,0,315000,TRIMESTRIELLE,SSE PNER

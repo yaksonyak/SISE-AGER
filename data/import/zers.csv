@@ -1,0 +1,3 @@
+code,nom,superficie_km2,population,nombre_menages,nombre_localites,taux_localites_moins_800_habitants,potentiel_solaire,potentiel_hydro,description
+ZER-KANKAN,ZER Kankan,72000,2100000,315000,2850,68,Eleve,Moyen,Zone prioritaire de Kankan
+ZER-KINDIA,ZER Kindia,36200,1850000,285000,2450,62,Eleve,Moyen,Zone prioritaire de Kindia

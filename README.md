@@ -150,6 +150,43 @@ Les référentiels métier PNER sont exposés par API Platform et consultables d
 
 Les fixtures métier de démonstration chargent notamment les programmes `PUERG` (2023-2027), `PERMT` (2028-2033) et `PFAUER` (2034-2040), des ZER, des préfectures, des sous-préfectures, des localités, des systèmes d’électrification et un projet pilote PUERG avec phases, activités et localités associées, des points GPS, infrastructures électriques, sites énergétiques et données géospatiales SIG de démonstration, des indicateurs, valeurs, rapports et observations SSE, des bailleurs, sources, conventions, décaissements et coûts prévisionnels, ainsi que des actions, bénéficiaires, formations, indicateurs et comités genre/inclusion de démonstration.
 
+## Import massif des données PNER
+
+Les fichiers modèles CSV destinés au chargement massif des données PNER sont placés dans `data/import`. Ils utilisent des codes métiers (`PUERG`, `ZER-KANKAN`, `PREF-KANKAN`, `LOC-KOUROUSSA-001`, etc.) plutôt que des IDs techniques Doctrine.
+
+Commandes disponibles :
+
+```bash
+php bin/console app:validate-pner-import-files
+php bin/console app:import-pner-data
+```
+
+Ordre d’import appliqué par le service : programmes, ZER, préfectures, sous-préfectures, systèmes d’électrification, localités, projets, associations projet/localité, points GPS, infrastructures, sites énergétiques, indicateurs, valeurs d’indicateurs, données genre, puis financement.
+
+Formats de correspondance principaux :
+
+- `localites.csv` référence `zer_code`, `prefecture_code`, `sous_prefecture_code`, `programme_code` et `systeme_code`.
+- `projet_localites.csv` référence `projet_code` et `localite_code`.
+- `valeurs_indicateurs.csv` référence `indicateur_code`, `programme_code`, `zer_code`, `projet_code` et `localite_code`.
+- `actions_genre.csv` référence `programme_code`, `projet_code`, `zer_code` et `localite_code`.
+- `conventions_financement.csv` référence `bailleur_code`, `source_code`, `programme_code` et `projet_code`.
+
+Exemple `localites.csv` :
+
+```csv
+code,nom,longitude,latitude,nombre_menages,population_totale,categorie_population,statut_electrification,distance_reseau_km,zer_code,prefecture_code,sous_prefecture_code,programme_code,systeme_code
+LOC-KOUROUSSA-001,Kouroussa Centre,-9.8833,10.6500,240,1450,PLUS_800_HABITANTS,NON_ELECTRIFIEE,18.5,ZER-KANKAN,PREF-KANKAN,SP-KOUROUSSA,PUERG,EXT-30KV
+```
+
+Exemple `projet_localites.csv` :
+
+```csv
+projet_code,localite_code,statut_localite,date_raccordement_prevue,date_raccordement_effective,commentaire
+PRJ-PUERG-KKN-001,LOC-KOUROUSSA-001,A_ELECTRIFIER,2025-06-30,,Localite raccordable au reseau MT 30 kV
+```
+
+Les fixtures existantes restent disponibles pour les démonstrations rapides ; l’import CSV sert au chargement progressif des données réelles issues des documents PNER.
+
 
 ## Relations API en identifiants simples
 
