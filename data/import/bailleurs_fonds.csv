@@ -1,0 +1,14 @@
+code,nom,type_bailleur,pays,contact_principal,email,telephone,description
+ETAT-GN,État guinéen,ETAT,Guinée,Ministère de l’Énergie,financement@sise-ager.local,+224000000001,Budget national et contrepartie publique pour le PNER 2040
+BM,Banque mondiale,BANQUE,Multinational,Point focal énergie,banque-mondiale@sise-ager.local,+224000000010,Financement concessionnel et assistance technique énergie
+BAD,Banque africaine de développement,BANQUE,Multinational,Chargé de programme énergie,bad@sise-ager.local,+224000000011,Appui aux infrastructures rurales et à l’accès universel
+UE,Union européenne,PTF,Multinational,Délégation Union européenne,ue@sise-ager.local,+224000000012,Subventions et appui institutionnel au secteur énergie
+AFD,Agence française de développement,PTF,France,Responsable portefeuille énergie,afd@sise-ager.local,+224000000013,Prêts et subventions pour électrification rurale
+PNUD,PNUD,PTF,Multinational,Programme énergie durable,pnud@sise-ager.local,+224000000014,Appui développement durable et inclusion
+FVC,Fonds vert climat,FONDS_CLIMAT,Multinational,Point focal climat,fonds-vert-climat@sise-ager.local,+224000000015,Financement climat pour solutions renouvelables
+BOAD,BOAD,BANQUE,Multinational,Département énergie,boad@sise-ager.local,+224000000016,Financement bancaire régional
+BID,BID,BANQUE,Multinational,Coordination financement,bid@sise-ager.local,+224000000017,Financement développement et infrastructures
+GIZ,GIZ,PTF,Allemagne,Programme énergie,giz@sise-ager.local,+224000000018,Assistance technique et renforcement des capacités
+USAID,USAID,PTF,États-Unis,Power Africa Guinée,usaid@sise-ager.local,+224000000019,Appui accès énergie et énergie productive
+PRIVE-ENERGIE,Secteur privé énergie,SECTEUR_PRIVE,Guinée,Consortium opérateurs privés,secteur-prive@sise-ager.local,+224000000020,Investissements privés et partenariats public-privé
+PTF-DEMO,Partenaire technique et financier demo,PTF,Multinational,Point focal PTF,ptf@sise-ager.local,+224000000002,Partenaire de démonstration conservé pour les données historiques
