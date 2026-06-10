@@ -1,3 +1,34 @@
 code,nom,type_infrastructure,description,point_code,localite_code,statut
+INF-KINDIA-PS-001,Poste source Kindia rural,POSTE_SOURCE,Poste source de desserte rurale ZER-KINDIA,GPS-LOC-GBEREAKHORY-CENTRE,LOC-GBEREAKHORY-CENTRE,EN_SERVICE
+INF-KINDIA-PT-001,Poste transformation Filigbe,POSTE_TRANSFORMATION,Poste de transformation pour mini-réseau solaire Filigbe,GPS-LOC-FILIGBE,LOC-FILIGBE,EN_SERVICE
+INF-KINDIA-LMT-001,Ligne MT Kindia Gbéréakhory,LIGNE_MT,Départ MT 30 kV pour localités raccordables de Kindia,GPS-LOC-GBEREAKHORY-CENTRE,LOC-GBEREAKHORY-CENTRE,EN_CONSTRUCTION
+INF-KINDIA-LBT-001,Ligne BT Goleah,LIGNE_BT,Réseau basse tension de distribution Goleah,GPS-LOC-GOLEAH,LOC-GOLEAH,EN_SERVICE
+INF-KINDIA-MR-001,Mini-réseau solaire Filigbe,MINI_RESEAU,Mini-réseau solaire centralisé ZER-KINDIA,GPS-LOC-FILIGBE,LOC-FILIGBE,EN_SERVICE
+INF-KINDIA-CS-001,Centrale solaire Goleah,CENTRALE_SOLAIRE,Centrale solaire pour localité de Goleah,GPS-LOC-GOLEAH,LOC-GOLEAH,EN_CONSTRUCTION
+INF-KINDIA-BAT-001,Batterie stockage Kindia,BATTERIE_STOCKAGE,Stockage lithium pour mini-réseaux Kindia,GPS-LOC-MEYENYI,LOC-MEYENYI,PLANIFIE
+INF-TELIMELE-MR-001,Mini-réseau Secteur Hafia I,MINI_RESEAU,Mini-réseau solaire du secteur Hafia I,GPS-LOC-SECTEUR-HAFIA-I,LOC-SECTEUR-HAFIA-I,EN_CONSTRUCTION
+INF-TELIMELE-CS-001,Centrale solaire Kolly,CENTRALE_SOLAIRE,Centrale PV centralisée de Kolly,GPS-LOC-KOLLY,LOC-KOLLY,PLANIFIE
+INF-TELIMELE-LBT-001,Ligne BT Soinde,LIGNE_BT,Réseau BT de Soinde,GPS-LOC-SOINDE,LOC-SOINDE,PLANIFIE
+INF-KINDIA-PT-002,Poste transformation Maleya,POSTE_TRANSFORMATION,Poste de transformation de Maleya,GPS-LOC-MALEYA,LOC-MALEYA,PLANIFIE
+INF-BOKE-PS-001,Poste source rural Boké,POSTE_SOURCE,Poste source planifié pour extension MT ZER-BOKE,,,PLANIFIE
+INF-BOKE-LMT-001,Ligne MT 30 kV Boké Nord,LIGNE_MT,Ligne moyenne tension pour localités dispersées de Boké,,,PLANIFIE
+INF-BOKE-PT-001,Poste transformation Boké rural,POSTE_TRANSFORMATION,Poste de transformation en ZER-BOKE,,,PLANIFIE
+INF-BOKE-LBT-001,Réseau BT Boké rural,LIGNE_BT,Déploiement BT pour grappes rurales de Boké,,,PLANIFIE
+INF-KANKAN-PS-001,Poste source Kankan rural,POSTE_SOURCE,Poste source de soutien mini-réseaux ZER-KANKAN,GPS-LOC-KOUROUSSA-001,LOC-KOUROUSSA-001,EN_CONSTRUCTION
+INF-KANKAN-MR-001,Mini-réseau communautaire Kankan,MINI_RESEAU,Mini-réseau solaire communautaire ZER-KANKAN,GPS-LOC-KOUROUSSA-001,LOC-KOUROUSSA-001,PLANIFIE
+INF-KANKAN-CS-001,Centrale solaire Kankan,CENTRALE_SOLAIRE,Centrale PV communautaire ZER-KANKAN,GPS-LOC-KOUROUSSA-001,LOC-KOUROUSSA-001,PLANIFIE
+INF-KANKAN-BAT-001,Stockage Kankan,BATTERIE_STOCKAGE,Batterie pour mini-réseaux communautaires Kankan,GPS-LOC-KOUROUSSA-001,LOC-KOUROUSSA-001,PLANIFIE
+INF-LABE-CS-001,Centrale solaire Labé rural,CENTRALE_SOLAIRE,Centrale solaire planifiée ZER-LABE,,,PLANIFIE
+INF-LABE-MR-001,Mini-réseau Labé,MINI_RESEAU,Mini-réseau solaire ZER-LABE,,,PLANIFIE
+INF-LABE-BAT-001,Batterie stockage Labé,BATTERIE_STOCKAGE,Stockage pour systèmes décentralisés Labé,,,PLANIFIE
+INF-MAMOU-HY-001,Centrale hybride Mamou,CENTRALE_HYDRO,Composante hydro du système hybride Mamou,,,PLANIFIE
+INF-MAMOU-CS-001,Centrale solaire Mamou,CENTRALE_SOLAIRE,Composante PV du système hybride Mamou,,,PLANIFIE
+INF-MAMOU-LMT-001,Ligne MT hybride Mamou,LIGNE_MT,Interconnexion des sites hybrides Mamou,,,PLANIFIE
+INF-FARANAH-HY-001,Petite centrale hydro Faranah,CENTRALE_HYDRO,Petite centrale hydroélectrique rurale Faranah,,,PLANIFIE
+INF-FARANAH-LMT-001,Ligne MT hydro Faranah,LIGNE_MT,Ligne moyenne tension depuis site hydro Faranah,,,PLANIFIE
+INF-FARANAH-PT-001,Poste transformation Faranah,POSTE_TRANSFORMATION,Poste de transformation associé au site hydro Faranah,,,PLANIFIE
+INF-NZEREKORE-CS-001,Centrale solaire Nzérékoré,CENTRALE_SOLAIRE,Centrale solaire accès universel ZER-NZEREKORE,,,PLANIFIE
+INF-NZEREKORE-MR-001,Mini-réseau Nzérékoré,MINI_RESEAU,Mini-réseau rural ZER-NZEREKORE,,,PLANIFIE
+INF-NZEREKORE-BAT-001,Stockage Nzérékoré,BATTERIE_STOCKAGE,Stockage énergie pour Nzérékoré rural,,,HORS_SERVICE
 INF-KOUROUSSA-POSTE-001,Poste transformation Kouroussa,POSTE_TRANSFORMATION,Poste de distribution rural,GPS-KOUROUSSA-001,LOC-KOUROUSSA-001,PLANIFIE
 INF-SOUGUETA-PV-001,Centrale solaire Sougueta,CENTRALE_SOLAIRE,Centrale PV de demonstration,GPS-SOUGUETA-001,LOC-SOUGUETA-001,PLANIFIE

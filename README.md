@@ -193,6 +193,8 @@ Deuxième lot de données PNER ajouté : projets, localités par projet, points 
 
 Troisième lot de données PNER ajouté : financement détaillé avec bailleurs, sources de financement, conventions, décaissements et coûts prévisionnels enrichis pour le dashboard.
 
+Quatrième lot de données PNER ajouté : SIG / cartographie enrichie avec points GPS, infrastructures électriques, sites énergétiques et données géospatiales par localité.
+
 
 ## Relations API métier
 
