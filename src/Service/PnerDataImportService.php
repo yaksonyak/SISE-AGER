@@ -163,12 +163,12 @@ class PnerDataImportService
         return $result;
     }
 
-    /** @return array<string, int> */
+    /** @return array{programmes:int, zers:int, localites:int, projets:int, indicateurs:int, actions_genre:int, financements:int, files:array<string, int>} */
     public function import(?string $directory = null): array
     {
         $directory ??= $this->getImportDirectory();
         $this->pointGpsByCode = [];
-        $summary = ['programmes' => 0, 'zers' => 0, 'localites' => 0, 'projets' => 0, 'indicateurs' => 0, 'actions_genre' => 0, 'financements' => 0];
+        $summary = ['programmes' => 0, 'zers' => 0, 'localites' => 0, 'projets' => 0, 'indicateurs' => 0, 'actions_genre' => 0, 'financements' => 0, 'files' => []];
 
         foreach (self::IMPORT_ORDER as $fileName) {
             $path = $directory.'/'.$fileName;
@@ -181,8 +181,8 @@ class PnerDataImportService
                 'zers.csv' => $this->importZers($rows),
                 'prefectures.csv' => $this->importPrefectures($rows),
                 'sous_prefectures.csv' => $this->importSousPrefectures($rows),
-                'localites.csv' => $this->importLocalites($rows),
                 'systemes_electrification.csv' => $this->importSystemes($rows),
+                'localites.csv' => $this->importLocalites($rows),
                 'projets_electrification.csv' => $this->importProjets($rows),
                 'projet_localites.csv' => $this->importProjetLocalites($rows),
                 'points_gps.csv' => $this->importPointsGps($rows),
@@ -201,6 +201,9 @@ class PnerDataImportService
                 default => 0,
             };
 
+            $this->entityManager->flush();
+            $summary['files'][$fileName] = $count;
+
             match ($fileName) {
                 'programmes_pner.csv' => $summary['programmes'] += $count,
                 'zers.csv' => $summary['zers'] += $count,
@@ -212,8 +215,6 @@ class PnerDataImportService
                 default => null,
             };
         }
-
-        $this->entityManager->flush();
 
         return $summary;
     }

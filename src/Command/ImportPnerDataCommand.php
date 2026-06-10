@@ -34,6 +34,9 @@ class ImportPnerDataCommand extends Command
         }
 
         $summary = $this->importService->import($directory);
+        foreach ($summary['files'] as $fileName => $count) {
+            $io->text(sprintf('Import %s : %d lignes créées/mises à jour', $fileName, $count));
+        }
         $io->success('Import PNER terminé.');
         $io->table(['Indicateur', 'Nombre importé / mis à jour'], [
             ['Programmes', $summary['programmes']],
