@@ -188,9 +188,11 @@ PRJ-PUERG-KKN-001,LOC-KOUROUSSA-001,A_ELECTRIFIER,2025-06-30,,Localite raccordab
 Les fixtures existantes restent disponibles pour les démonstrations rapides ; l’import CSV sert au chargement progressif des données réelles issues des documents PNER.
 
 
-## Relations API en identifiants simples
+## Relations API métier
 
-Les relations métier API Platform sont sérialisées avec des identifiants numériques simples afin de faciliter l’intégration front. Les payloads peuvent donc utiliser `programmePner: 1` au lieu de l’IRI `/api/programme_pners/1`.
+Les écritures API Platform (`POST`, `PUT`, `PATCH`) continuent d’accepter les relations métier sous forme d’identifiants numériques simples afin de faciliter l’intégration front. Les payloads peuvent donc utiliser `programmePner: 1` au lieu de l’IRI `/api/programme_pners/1`.
+
+Les lectures (`GET`) retournent désormais les relations `ManyToOne` sous forme d’objets résumés de premier niveau. Les objets imbriqués sont volontairement limités aux champs `id`, `code` et au libellé métier disponible (`nom`, `libelle` ou `intitule`) afin d’éviter les boucles de sérialisation et de ne pas exposer les collections inverses.
 
 Exemple de lecture d’un projet d’électrification :
 
@@ -199,9 +201,21 @@ Exemple de lecture d’un projet d’électrification :
   "id": 1,
   "code": "PRJ-PUERG-KDA-001",
   "intitule": "Électrification rurale prioritaire de la zone de Kindia",
-  "programmePner": 1,
-  "zer": 1,
-  "systemeElectrification": 1,
+  "programmePner": {
+    "id": 1,
+    "code": "PUERG",
+    "nom": "Programme PUERG"
+  },
+  "zer": {
+    "id": 2,
+    "code": "ZER-KINDIA",
+    "nom": "ZER Kindia"
+  },
+  "systemeElectrification": {
+    "id": 1,
+    "code": "EXT-30KV",
+    "nom": "Extension réseau MT 30 kV"
+  },
   "statut": "EN_PREPARATION"
 }
 ```

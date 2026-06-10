@@ -11,6 +11,11 @@ use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
+/**
+ * Keeps API Platform serialization groups as the source of truth: the decorated
+ * normalizer first decides which relation fields are exposed, then this normalizer
+ * replaces exposed to-one relations with a first-level business summary.
+ */
 class DoctrineRelationIdNormalizer implements NormalizerInterface, DenormalizerInterface, NormalizerAwareInterface, DenormalizerAwareInterface
 {
     use NormalizerAwareTrait;
@@ -18,6 +23,13 @@ class DoctrineRelationIdNormalizer implements NormalizerInterface, DenormalizerI
 
     private const ALREADY_CALLED = 'doctrine_relation_id_normalizer_already_called';
     private const ENTITY_NAMESPACE = 'App\\Entity\\';
+    private const RELATION_FIELDS = [
+        'id' => ['getId'],
+        'code' => ['getCode'],
+        'nom' => ['getNom'],
+        'libelle' => ['getLibelle'],
+        'intitule' => ['getIntitule', 'getTitre'],
+    ];
 
     public function __construct(private readonly ManagerRegistry $managerRegistry)
     {
@@ -55,7 +67,7 @@ class DoctrineRelationIdNormalizer implements NormalizerInterface, DenormalizerI
             }
 
             $relation = $object->{$getter}();
-            $normalized[$associationName] = is_object($relation) && method_exists($relation, 'getId') ? $relation->getId() : null;
+            $normalized[$associationName] = is_object($relation) ? $this->normalizeRelationSummary($relation) : null;
         }
 
         return $normalized;
@@ -106,6 +118,31 @@ class DoctrineRelationIdNormalizer implements NormalizerInterface, DenormalizerI
             'object' => false,
             '*' => false,
         ];
+    }
+
+    /**
+     * @return array<string, int|string|float|bool|null>
+     */
+    private function normalizeRelationSummary(object $relation): array
+    {
+        $summary = [];
+
+        foreach (self::RELATION_FIELDS as $field => $getters) {
+            foreach ($getters as $getter) {
+                if (!method_exists($relation, $getter)) {
+                    continue;
+                }
+
+                $value = $relation->{$getter}();
+
+                if ($value === null || is_scalar($value)) {
+                    $summary[$field] = $value;
+                    break;
+                }
+            }
+        }
+
+        return $summary;
     }
 
     /**
