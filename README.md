@@ -189,6 +189,8 @@ Les fixtures existantes restent disponibles pour les démonstrations rapides ; l
 
 Premier lot de données PNER réelles ajouté dans les CSV d’import : ZER, systèmes d’électrification, préfectures, sous-préfectures et localités Kindia/Télimélé.
 
+Deuxième lot de données PNER ajouté : projets, localités par projet, points GPS, indicateurs dashboard, valeurs d’indicateurs et coûts prévisionnels.
+
 
 ## Relations API métier
 

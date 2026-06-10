@@ -1,3 +1,31 @@
 projet_code,localite_code,statut_localite,date_raccordement_prevue,date_raccordement_effective,commentaire
-PRJ-PUERG-KKN-001,LOC-KOUROUSSA-001,A_ELECTRIFIER,2025-06-30,,Localite raccordable au reseau MT 30 kV
-PRJ-PERMT-KDA-001,LOC-SOUGUETA-001,A_ELECTRIFIER,2029-03-31,,Localite candidate mini-reseau solaire
+PRJ-PUERG-KINDIA-001,LOC-FILIGBE,ELECTRIFIEE,2025-12-31,2025-03-31,Premières localités électrifiées du lot Kindia
+PRJ-PUERG-KINDIA-001,LOC-FOULAYAH-CITE-CENTRE,ELECTRIFIEE,2025-12-31,2025-03-31,Premières localités électrifiées du lot Kindia
+PRJ-PUERG-KINDIA-001,LOC-MEYENYI,EN_TRAVAUX,2025-12-31,,Lot prioritaire Kindia en travaux
+PRJ-PUERG-KINDIA-001,LOC-GBEREAKHORY-CENTRE,EN_TRAVAUX,2025-12-31,,Lot prioritaire Kindia en travaux
+PRJ-PUERG-KINDIA-001,LOC-GOLEAH,EN_TRAVAUX,2025-12-31,,Lot prioritaire Kindia en travaux
+PRJ-PUERG-TELIMELE-001,LOC-BORIRE,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-DOGHOL-MOULOL,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-HOUNSIRE,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-KANKALIBA,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-LEY-GOUNGA,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-MADY,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-MBOWOY,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PUERG-TELIMELE-001,LOC-NYALLE,A_ELECTRIFIER,2026-06-30,,Lot solaire décentralisé Télimélé
+PRJ-PFAUER-KINDIA-002,LOC-MINAYA,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PFAUER-KINDIA-002,LOC-MORGBEYA,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PFAUER-KINDIA-002,LOC-TATA-SAMBAYA,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PFAUER-KINDIA-002,LOC-TONGBEDY,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PFAUER-KINDIA-002,LOC-WALANDY,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PFAUER-KINDIA-002,LOC-MALEYA,A_ELECTRIFIER,2035-12-31,,Densification et raccordement futur Kindia
+PRJ-PUERG-GENRE-001,LOC-SECTEUR-HAFIA-I,EN_TRAVAUX,2025-09-30,,Localités ciblées pour énergie productive et inclusion genre
+PRJ-PUERG-GENRE-001,LOC-KOLLY,EN_TRAVAUX,2025-09-30,,Localités ciblées pour énergie productive et inclusion genre
+PRJ-PUERG-GENRE-001,LOC-SECTEUR-BARKERE,EN_TRAVAUX,2025-09-30,,Localités ciblées pour énergie productive et inclusion genre
+PRJ-PUERG-GENRE-001,LOC-MENYERE-LEY,EN_TRAVAUX,2025-09-30,,Localités ciblées pour énergie productive et inclusion genre
+PRJ-PUERG-GENRE-001,LOC-SOINDE,EN_TRAVAUX,2025-09-30,,Localités ciblées pour énergie productive et inclusion genre
+PRJ-PUERG-KINDIA-001,LOC-BORA,A_ELECTRIFIER,2026-03-31,,Extension complémentaire Kindia
+PRJ-PUERG-KINDIA-001,LOC-FENTEKHOURE,A_ELECTRIFIER,2026-03-31,,Extension complémentaire Kindia
+PRJ-PUERG-KINDIA-001,LOC-KANTY,A_ELECTRIFIER,2026-03-31,,Extension complémentaire Kindia
+PRJ-PUERG-KINDIA-001,LOC-KONDEKHOURE,A_ELECTRIFIER,2026-03-31,,Extension complémentaire Kindia
+PRJ-PUERG-KKN-001,LOC-KOUROUSSA-001,A_ELECTRIFIER,2025-06-30,,Localité raccordable au réseau MT 30 kV
+PRJ-PERMT-KDA-001,LOC-SOUGUETA-001,A_ELECTRIFIER,2029-03-31,,Localité candidate mini-réseau solaire
