@@ -1,0 +1,3 @@
+code,nom,type_bailleur,pays,contact_principal,email,telephone,description
+ETAT-GN,Etat guineen,ETAT,Guinee,Ministere Energie,financement@sise-ager.local,+224000000001,Budget national PNER
+PTF-DEMO,Partenaire technique et financier demo,PTF,Multinational,Point focal PTF,ptf@sise-ager.local,+224000000002,Partenaire de demonstration
