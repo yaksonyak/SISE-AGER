@@ -195,6 +195,8 @@ Troisième lot de données PNER ajouté : financement détaillé avec bailleurs,
 
 Quatrième lot de données PNER ajouté : SIG / cartographie enrichie avec points GPS, infrastructures électriques, sites énergétiques et données géospatiales par localité.
 
+Cinquième lot de données PNER ajouté : Genre / Inclusion enrichi avec actions genre, bénéficiaires, formations, indicateurs genre et comités genre pour le dashboard.
+
 
 ## Relations API métier
 

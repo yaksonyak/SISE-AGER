@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Entity\ActionGenre;
 use App\Entity\BailleurFonds;
 use App\Entity\BeneficiaireGenre;
+use App\Entity\ComiteGenre;
 use App\Entity\ConventionFinancement;
 use App\Entity\CoutPrevisionnel;
 use App\Entity\Decaissement;
@@ -12,6 +13,7 @@ use App\Entity\DonneeGeospatialeLocalite;
 use App\Entity\FormationGenre;
 use App\Entity\IndicateurPner;
 use App\Entity\InfrastructureElectrique;
+use App\Entity\IndicateurGenre;
 use App\Entity\Localite;
 use App\Entity\PointGps;
 use App\Entity\Prefecture;
@@ -48,6 +50,8 @@ class PnerDataImportService
         'actions_genre.csv' => ['code', 'titre', 'axe_strategique', 'statut'],
         'beneficiaires_genre.csv' => ['action_code', 'categorie_beneficiaire', 'nombre_hommes', 'nombre_femmes', 'nombre_jeunes', 'nombre_personnes_vulnerables'],
         'formations_genre.csv' => ['code', 'intitule', 'theme', 'nombre_participants', 'nombre_femmes', 'nombre_hommes'],
+        'indicateurs_genre.csv' => ['code', 'libelle'],
+        'comites_genre.csv' => ['code', 'nom', 'type_comite', 'nombre_membres', 'nombre_femmes', 'nombre_hommes', 'statut'],
         'bailleurs_fonds.csv' => ['code', 'nom', 'type_bailleur'],
         'sources_financement.csv' => ['code', 'nom', 'type_source'],
         'conventions_financement.csv' => ['code', 'intitule', 'bailleur_code', 'montant_usd', 'statut'],
@@ -60,7 +64,7 @@ class PnerDataImportService
         'programmes_pner.csv' => 'code', 'zers.csv' => 'code', 'prefectures.csv' => 'code', 'sous_prefectures.csv' => 'code',
         'localites.csv' => 'code', 'systemes_electrification.csv' => 'code', 'projets_electrification.csv' => 'code',
         'points_gps.csv' => 'point_code', 'infrastructures_electriques.csv' => 'code', 'sites_energetiques.csv' => 'code', 'donnee_geospatiale_localites.csv' => 'localite_code',
-        'indicateurs_pner.csv' => 'code', 'actions_genre.csv' => 'code', 'formations_genre.csv' => 'code',
+        'indicateurs_pner.csv' => 'code', 'actions_genre.csv' => 'code', 'formations_genre.csv' => 'code', 'indicateurs_genre.csv' => 'code', 'comites_genre.csv' => 'code',
         'bailleurs_fonds.csv' => 'code', 'sources_financement.csv' => 'code', 'conventions_financement.csv' => 'code',
         'decaissements.csv' => 'reference_paiement',
     ];
@@ -69,7 +73,7 @@ class PnerDataImportService
     private const IMPORT_ORDER = [
         'programmes_pner.csv', 'zers.csv', 'prefectures.csv', 'sous_prefectures.csv', 'systemes_electrification.csv', 'localites.csv',
         'projets_electrification.csv', 'projet_localites.csv', 'points_gps.csv', 'infrastructures_electriques.csv', 'sites_energetiques.csv', 'donnee_geospatiale_localites.csv',
-        'indicateurs_pner.csv', 'valeurs_indicateurs.csv', 'actions_genre.csv', 'beneficiaires_genre.csv', 'formations_genre.csv',
+        'indicateurs_pner.csv', 'valeurs_indicateurs.csv', 'actions_genre.csv', 'beneficiaires_genre.csv', 'formations_genre.csv', 'indicateurs_genre.csv', 'comites_genre.csv',
         'bailleurs_fonds.csv', 'sources_financement.csv', 'conventions_financement.csv', 'decaissements.csv', 'couts_previsionnels.csv',
     ];
 
@@ -196,6 +200,8 @@ class PnerDataImportService
                 'actions_genre.csv' => $this->importActionsGenre($rows),
                 'beneficiaires_genre.csv' => $this->importBeneficiairesGenre($rows),
                 'formations_genre.csv' => $this->importFormationsGenre($rows),
+                'indicateurs_genre.csv' => $this->importIndicateursGenre($rows),
+                'comites_genre.csv' => $this->importComitesGenre($rows),
                 'bailleurs_fonds.csv' => $this->importBailleurs($rows),
                 'sources_financement.csv' => $this->importSourcesFinancement($rows),
                 'conventions_financement.csv' => $this->importConventions($rows),
@@ -431,6 +437,44 @@ class PnerDataImportService
         return count($rows);
     }
 
+    private function importIndicateursGenre(array $rows): int
+    {
+        foreach ($rows as $row) {
+            $indicateur = $this->upsertByCode(IndicateurGenre::class, $row['code']);
+            $indicateur->setCode($row['code'])
+                ->setLibelle($row['libelle'])
+                ->setDescription($this->nullable($row['description'] ?? null))
+                ->setActionGenre($this->findOptionalByCode(ActionGenre::class, $row['action_code'] ?? null))
+                ->setProjetElectrification($this->findOptionalByCode(ProjetElectrification::class, $row['projet_code'] ?? null))
+                ->setValeurReference($this->nullableFloat($row['valeur_reference'] ?? null))
+                ->setValeurCible($this->nullableFloat($row['valeur_cible'] ?? null))
+                ->setValeurActuelle($this->nullableFloat($row['valeur_actuelle'] ?? null))
+                ->setUnite($this->nullable($row['unite'] ?? null));
+            $this->entityManager->persist($indicateur);
+        }
+        return count($rows);
+    }
+
+    private function importComitesGenre(array $rows): int
+    {
+        foreach ($rows as $row) {
+            $comite = $this->upsertByCode(ComiteGenre::class, $row['code']);
+            $comite->setCode($row['code'])
+                ->setNom($row['nom'])
+                ->setTypeComite($row['type_comite'])
+                ->setZer($this->findOptionalByCode(Zer::class, $row['zer_code'] ?? null))
+                ->setLocalite($this->findOptionalByCode(Localite::class, $row['localite_code'] ?? null))
+                ->setDateMiseEnPlace($this->nullableDate($row['date_mise_en_place'] ?? null))
+                ->setNombreMembres($this->int($row['nombre_membres']))
+                ->setNombreFemmes($this->int($row['nombre_femmes']))
+                ->setNombreHommes($this->int($row['nombre_hommes']))
+                ->setStatut($row['statut'])
+                ->setCommentaire($this->nullable($row['commentaire'] ?? null));
+            $this->entityManager->persist($comite);
+        }
+        return count($rows);
+    }
+
     private function importBailleurs(array $rows): int
     {
         foreach ($rows as $row) {
@@ -495,7 +539,7 @@ class PnerDataImportService
             ['projets_electrification.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['projets_electrification.csv', 'zer_code', 'zers.csv', 'code'], ['projets_electrification.csv', 'systeme_code', 'systemes_electrification.csv', 'code'], ['projet_localites.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['projet_localites.csv', 'localite_code', 'localites.csv', 'code'],
             ['infrastructures_electriques.csv', 'point_code', 'points_gps.csv', 'point_code'], ['infrastructures_electriques.csv', 'localite_code', 'localites.csv', 'code'], ['sites_energetiques.csv', 'point_code', 'points_gps.csv', 'point_code'], ['sites_energetiques.csv', 'localite_code', 'localites.csv', 'code'], ['donnee_geospatiale_localites.csv', 'localite_code', 'localites.csv', 'code'],
             ['valeurs_indicateurs.csv', 'indicateur_code', 'indicateurs_pner.csv', 'code'], ['valeurs_indicateurs.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['valeurs_indicateurs.csv', 'zer_code', 'zers.csv', 'code'], ['valeurs_indicateurs.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['valeurs_indicateurs.csv', 'localite_code', 'localites.csv', 'code'],
-            ['actions_genre.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['actions_genre.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['actions_genre.csv', 'zer_code', 'zers.csv', 'code'], ['actions_genre.csv', 'localite_code', 'localites.csv', 'code'], ['beneficiaires_genre.csv', 'action_code', 'actions_genre.csv', 'code'], ['beneficiaires_genre.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['beneficiaires_genre.csv', 'localite_code', 'localites.csv', 'code'], ['formations_genre.csv', 'action_code', 'actions_genre.csv', 'code'], ['formations_genre.csv', 'zer_code', 'zers.csv', 'code'], ['formations_genre.csv', 'localite_code', 'localites.csv', 'code'],
+            ['actions_genre.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['actions_genre.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['actions_genre.csv', 'zer_code', 'zers.csv', 'code'], ['actions_genre.csv', 'localite_code', 'localites.csv', 'code'], ['beneficiaires_genre.csv', 'action_code', 'actions_genre.csv', 'code'], ['beneficiaires_genre.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['beneficiaires_genre.csv', 'localite_code', 'localites.csv', 'code'], ['formations_genre.csv', 'action_code', 'actions_genre.csv', 'code'], ['formations_genre.csv', 'zer_code', 'zers.csv', 'code'], ['formations_genre.csv', 'localite_code', 'localites.csv', 'code'], ['indicateurs_genre.csv', 'action_code', 'actions_genre.csv', 'code'], ['indicateurs_genre.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['comites_genre.csv', 'zer_code', 'zers.csv', 'code'], ['comites_genre.csv', 'localite_code', 'localites.csv', 'code'],
             ['sources_financement.csv', 'bailleur_code', 'bailleurs_fonds.csv', 'code'], ['conventions_financement.csv', 'bailleur_code', 'bailleurs_fonds.csv', 'code'], ['conventions_financement.csv', 'source_code', 'sources_financement.csv', 'code'], ['conventions_financement.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['conventions_financement.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['decaissements.csv', 'convention_code', 'conventions_financement.csv', 'code'], ['decaissements.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['couts_previsionnels.csv', 'programme_code', 'programmes_pner.csv', 'code'], ['couts_previsionnels.csv', 'projet_code', 'projets_electrification.csv', 'code'], ['couts_previsionnels.csv', 'zer_code', 'zers.csv', 'code'],
         ];
     }
