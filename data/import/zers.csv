@@ -1,0 +1,8 @@
+code,nom,superficie_km2,population,nombre_menages,nombre_localites,taux_localites_moins_800_habitants,potentiel_solaire,potentiel_hydro,description
+ZER-BOKE,Boké,,1083147,150524,3891,,,,ZER de Boké issue du PNER 2040. Région à forte dispersion de localités rurales.
+ZER-FARANAH,Faranah,35581,941554,125902,1963,96.5,TRES_BON,ELEVE,"ZER de Faranah. Eclairement global solaire 2105.3 kWh/m²/an, potentiel hydro avec les chutes de Doumba et Wassa-Mangaï."
+ZER-KANKAN,Kankan,,1972537,190657,1679,,BON,MOYEN,ZER de Kankan issue du PNER 2040.
+ZER-KINDIA,Kindia,,1561374,226283,5335,96.8,BON,ELEVE,"ZER de Kindia, zone prioritaire pour plusieurs localités proches du réseau MT et des solutions solaires PV."
+ZER-LABE,Labé,22869,994458,166587,5138,99.5,TRES_BON,ELEVE,ZER de Labé. Eclairement global solaire 2090.5 kWh/m²/an.
+ZER-MAMOU,Mamou,,731188,139479,5363,98.8,BON,ELEVE,ZER de Mamou issue du PNER 2040.
+ZER-NZEREKORE,Nzérékoré,37658,1578030,235065,2785,89.8,BON,FAIBLE,ZER de Nzérékoré issue du PNER 2040.

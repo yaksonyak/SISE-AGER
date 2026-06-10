@@ -1,0 +1,3 @@
+code,nom,type_infrastructure,description,point_code,localite_code,statut
+INF-KOUROUSSA-POSTE-001,Poste transformation Kouroussa,POSTE_TRANSFORMATION,Poste de distribution rural,GPS-KOUROUSSA-001,LOC-KOUROUSSA-001,PLANIFIE
+INF-SOUGUETA-PV-001,Centrale solaire Sougueta,CENTRALE_SOLAIRE,Centrale PV de demonstration,GPS-SOUGUETA-001,LOC-SOUGUETA-001,PLANIFIE
