@@ -1,0 +1,15 @@
+code,libelle,description,type_indicateur,unite,valeur_reference,valeur_cible,frequence_suivi,source_donnee
+IND-LOCALITES-TOTAL,Nombre total de localités couvertes,Nombre total de localités intégrées dans le périmètre de suivi du dashboard PNER.,LOCALITES_ELECTRIFIEES,localité,0,25000,ANNUELLE,Dashboard PNER
+IND-LOCALITES-ELECTRIFIEES,Localités électrifiées,Nombre de localités rurales effectivement électrifiées.,LOCALITES_ELECTRIFIEES,localité,0,25000,TRIMESTRIELLE,SSE PNER
+IND-MENAGES-RACCORDES,Ménages raccordés,Nombre de ménages raccordés aux solutions d’électrification rurale.,MENAGES_RACCORDES,ménage,0,1500000,TRIMESTRIELLE,SSE PNER
+IND-ACCES-ELECTRICITE,Taux d’accès à l’électricité rurale,Part de la population rurale ayant accès à l’électricité.,ACCES_ELECTRICITE,%,18,100,ANNUELLE,SSE PNER
+IND-FINANCEMENT-MOBILISE,Financement mobilisé,Montants financiers mobilisés pour les programmes et projets PNER.,FINANCEMENT,USD,0,500000000,TRIMESTRIELLE,Suivi financier PNER
+IND-TAUX-EXECUTION,Taux d’exécution physique,Avancement physique moyen des projets suivis.,EXECUTION_PROJET,%,0,100,MENSUELLE,Rapports projets
+IND-INFRA-SANTE,Infrastructures sanitaires électrifiées,Nombre d’infrastructures sanitaires rurales électrifiées.,INFRASTRUCTURES_SOCIALES,infrastructure,0,2500,SEMESTRIELLE,SSE PNER
+IND-INFRA-ECOLES,Écoles électrifiées,Nombre d’écoles rurales électrifiées.,INFRASTRUCTURES_SOCIALES,école,0,4500,SEMESTRIELLE,SSE PNER
+IND-FEMMES-BENEFICIAIRES,Femmes bénéficiaires,Nombre de femmes bénéficiaires des actions énergie productive et genre.,GENRE,personne,0,250000,TRIMESTRIELLE,Cellule genre PNER
+IND-JEUNES-FORMES,Jeunes formés aux métiers de l’énergie,Nombre de jeunes formés aux métiers de l’énergie rurale.,GENRE,personne,0,50000,TRIMESTRIELLE,Cellule formation PNER
+IND-DECAISSEMENT,Décaissements réalisés,Montant des décaissements effectivement réalisés.,FINANCEMENT,USD,0,500000000,TRIMESTRIELLE,Suivi financier PNER
+IND-PROJETS-RETARD,Projets en retard,Nombre de projets présentant un retard par rapport au planning validé.,EXECUTION_PROJET,projet,0,0,MENSUELLE,PMO PNER
+IND-LOCALITES-ELEC,Localités électrifiées,Alias historique pour le nombre de localités rurales électrifiées.,LOCALITES_ELECTRIFIEES,localités,0,1200,TRIMESTRIELLE,SSE PNER
+IND-MENAGES-RACC,Ménages raccordés,Alias historique pour le nombre de ménages raccordés.,MENAGES_RACCORDES,ménages,0,315000,TRIMESTRIELLE,SSE PNER

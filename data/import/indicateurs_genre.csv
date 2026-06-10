@@ -1,0 +1,21 @@
+code,libelle,description,action_code,projet_code,valeur_reference,valeur_cible,valeur_actuelle,unite
+IG-TAUX-FEMMES-BENEFICIAIRES,Taux de femmes bénéficiaires,Indicateur dashboard genre : taux de femmes bénéficiaires.,GEN-001-INSTITUTIONNALISATION,PRJ-PUERG-KINDIA-001,10,100,35,%
+IG-NB-FEMMES-FORMEES,Nombre de femmes formées,Indicateur dashboard genre : nombre de femmes formées.,,PRJ-PUERG-TELIMELE-001,0,535,98,personne
+IG-NB-JEUNES-FORMES,Nombre de jeunes formés,Indicateur dashboard genre : nombre de jeunes formés.,GEN-003-SENSIBILISATION,PRJ-PUERG-GENRE-001,0,570,116,personne
+IG-NB-COMITES-FEMMES,Comités avec représentation féminine,Indicateur dashboard genre : comités avec représentation féminine.,GEN-004-RENFORCEMENT,PRJ-PERMT-LABE-001,0,605,134,comité
+IG-NB-AGR-FEMININES,AGR féminines appuyées,Indicateur dashboard genre : agr féminines appuyées.,,PRJ-PERMT-MAMOU-001,0,640,152,AGR
+IG-TAUX-FEMMES-COMITES,Taux de femmes dans les comités,Indicateur dashboard genre : taux de femmes dans les comités.,GEN-006-SUIVI,PRJ-PUERG-KINDIA-001,10,100,55,%
+IG-NB-FEMMES-MAINTENANCE,Femmes formées en maintenance solaire,Indicateur dashboard genre : femmes formées en maintenance solaire.,GEN-007-INSTITUTIONNALISATION,PRJ-PUERG-TELIMELE-001,0,710,188,personne
+IG-NB-FEMMES-GESTION,Femmes formées en gestion mini-réseau,Indicateur dashboard genre : femmes formées en gestion mini-réseau.,,PRJ-PUERG-GENRE-001,0,745,206,personne
+IG-NB-CAMPAGNES-GENRE,Campagnes de sensibilisation genre,Indicateur dashboard genre : campagnes de sensibilisation genre.,GEN-009-SENSIBILISATION,PRJ-PERMT-LABE-001,0,780,224,campagne
+IG-NB-MENAGES-FEMMES,Ménages dirigés par femmes appuyés,Indicateur dashboard genre : ménages dirigés par femmes appuyés.,GEN-010-RENFORCEMENT,PRJ-PERMT-MAMOU-001,0,815,242,ménage
+IG-NB-INFRA-COMMUNAUTAIRES,Infrastructures communautaires inclusives,Indicateur dashboard genre : infrastructures communautaires inclusives.,,PRJ-PUERG-KINDIA-001,0,850,260,infrastructure
+IG-NB-GROUPES-VULNERABLES,Groupes vulnérables appuyés,Indicateur dashboard genre : groupes vulnérables appuyés.,GEN-012-SUIVI,PRJ-PUERG-TELIMELE-001,0,885,278,groupe
+IG-TAUX-JEUNES-FEMMES,Taux de jeunes femmes formées,Indicateur dashboard genre : taux de jeunes femmes formées.,GEN-013-INSTITUTIONNALISATION,PRJ-PUERG-GENRE-001,10,100,83,%
+IG-NB-OPERATRICES,Opératrices locales énergie,Indicateur dashboard genre : opératrices locales énergie.,,PRJ-PERMT-LABE-001,0,955,314,personne
+IG-NB-FOYERS-PRODUCTIFS,Foyers productifs féminins raccordés,Indicateur dashboard genre : foyers productifs féminins raccordés.,GEN-015-SENSIBILISATION,PRJ-PERMT-MAMOU-001,0,990,332,foyer
+IG-TAUX-PARTICIPATION-FEMMES,Participation des femmes aux consultations,Indicateur dashboard genre : participation des femmes aux consultations.,GEN-016-RENFORCEMENT,PRJ-PUERG-KINDIA-001,10,100,95,%
+IG-NB-PLANS-GENRE,Plans d’action genre validés,Indicateur dashboard genre : plans d’action genre validés.,,PRJ-PUERG-TELIMELE-001,0,1060,368,plan
+IG-NB-AUDITS-GENRE,Audits genre réalisés,Indicateur dashboard genre : audits genre réalisés.,GEN-018-SUIVI,PRJ-PUERG-GENRE-001,0,1095,386,audit
+IG-NB-DONNEES-GENRE,Jeux de données genre collectés,Indicateur dashboard genre : jeux de données genre collectés.,GEN-019-INSTITUTIONNALISATION,PRJ-PERMT-LABE-001,0,1130,404,jeu
+IG-TAUX-RESOLUTION-PLAINTES,Taux de résolution des plaintes genre,Indicateur dashboard genre : taux de résolution des plaintes genre.,,PRJ-PERMT-MAMOU-001,10,100,72,%
