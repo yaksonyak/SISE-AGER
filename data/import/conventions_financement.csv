@@ -1,2 +1,19 @@
 code,intitule,bailleur_code,source_code,programme_code,projet_code,montant_usd,date_signature,date_debut,date_fin,statut,description
-CONV-PUERG-KKN-001,Convention financement projet Kankan,PTF-DEMO,DON-PTF-PUERG,PUERG,PRJ-PUERG-KKN-001,7800000,2024-02-15,2024-03-01,2027-12-31,EN_EXECUTION,Convention pilote PNER
+CONV-PUERG-KINDIA-BM-001,Convention Banque mondiale électrification prioritaire Kindia,BM,PRET-BM-PUERG,PUERG,PRJ-PUERG-KINDIA-001,5200000,2024-02-20,2024-03-01,2027-12-31,EN_EXECUTION,Financement Banque mondiale pour le lot prioritaire Kindia
+CONV-PUERG-KINDIA-ETAT-001,Contrepartie État projet Kindia,ETAT-GN,CONTREPARTIE-ETAT-PUERG,PUERG,PRJ-PUERG-KINDIA-001,2600000,2024-01-25,2024-02-01,2027-12-31,EN_EXECUTION,Contrepartie nationale pour Kindia
+CONV-PUERG-TELIMELE-UE-001,Subvention UE localités rurales Télimélé,UE,SUBV-UE-ENERGIE,PUERG,PRJ-PUERG-TELIMELE-001,3200000,2024-06-15,2024-07-01,2027-06-30,SIGNEE,Subvention pour solutions PV décentralisées à Télimélé
+CONV-PUERG-TELIMELE-USAID-001,Appui USAID usages productifs Télimélé,USAID,DON-USAID-PRODUCTIF,PUERG,PRJ-PUERG-TELIMELE-001,1400000,2025-01-15,2025-02-01,2027-06-30,EN_EXECUTION,Appui énergie productive et opérateurs locaux
+CONV-PUERG-BOKE-AFD-001,Prêt AFD extension réseau Boké,AFD,PRET-AFD-RESEAUX,PUERG,PRJ-PUERG-BOKE-001,9000000,2025-03-10,2025-04-01,2027-12-31,SIGNEE,Financement extension réseau MT 30 kV Boké
+CONV-PUERG-BOKE-ETAT-001,Budget État infrastructures Boké,ETAT-GN,BUDGET-ETAT-PNER,PUERG,PRJ-PUERG-BOKE-001,5000000,2025-01-20,2025-02-01,2027-12-31,EN_PREPARATION,Contribution nationale pour Boké
+CONV-PUERG-KANKAN-BAD-001,Prêt BAD mini-réseaux Kankan,BAD,PRET-BAD-INFRA,PUERG,PRJ-PUERG-KANKAN-001,7200000,2025-02-28,2025-03-15,2027-12-31,SIGNEE,Financement des mini-réseaux communautaires de Kankan
+CONV-PUERG-KANKAN-GIZ-001,Assistance technique GIZ Kankan,GIZ,DON-GIZ-TECHNIQUE,PUERG,PRJ-PUERG-KANKAN-001,900000,2024-11-30,2025-01-01,2027-12-31,EN_EXECUTION,Assistance technique et formation locale
+CONV-PERMT-LABE-BOAD-001,Prêt BOAD solaire rural Labé,BOAD,PRET-BOAD-PERMT,PERMT,PRJ-PERMT-LABE-001,11000000,2027-09-15,2028-01-01,2033-12-31,EN_PREPARATION,Financement du programme solaire rural de Labé
+CONV-PERMT-LABE-FVC-001,Financement climat solaire Labé,FVC,FVC-SOLAIRE-RURAL,PERMT,PRJ-PERMT-LABE-001,6500000,2027-12-10,2028-01-01,2033-12-31,EN_PREPARATION,Appui climat aux systèmes solaires ruraux
+CONV-PERMT-MAMOU-FVC-001,Fonds climat hybridation Mamou,FVC,FVC-HYBRIDE-RESILIENCE,PERMT,PRJ-PERMT-MAMOU-001,12000000,2027-10-20,2028-06-01,2033-12-31,EN_PREPARATION,Financement climat hybridation PV/Hydro
+CONV-PERMT-MAMOU-PRIVE-001,PPP privé hybridation Mamou,PRIVE-ENERGIE,PPP-PRIVE-MINIRESEAUX,PERMT,PRJ-PERMT-MAMOU-001,7000000,2027-11-05,2028-06-01,2033-12-31,EN_PREPARATION,Participation du secteur privé aux mini-réseaux hybrides
+CONV-PERMT-FARANAH-BID-001,Prêt BID petite hydro Faranah,BID,PRET-BID-HYDRO,PERMT,PRJ-PERMT-FARANAH-001,17000000,2027-08-01,2028-01-01,2032-12-31,SIGNEE,Financement des petites centrales hydroélectriques
+CONV-PFAUER-NZEREKORE-BAD-001,Financement BAD accès universel Nzérékoré,BAD,PRET-BAD-INFRA,PFAUER,PRJ-PFAUER-NZEREKORE-001,18000000,2027-12-20,2034-01-01,2040-12-31,EN_PREPARATION,Préparation financement accès universel rural
+CONV-PFAUER-KINDIA-AFD-001,Financement AFD densification Kindia,AFD,PRET-AFD-RESEAUX,PFAUER,PRJ-PFAUER-KINDIA-002,9500000,2027-12-22,2034-01-01,2038-12-31,EN_PREPARATION,Densification et raccordement des localités rurales de Kindia
+CONV-PUERG-GENRE-PNUD-001,Don PNUD énergie productive et inclusion genre,PNUD,DON-PNUD-INCLUSION,PUERG,PRJ-PUERG-GENRE-001,1800000,2024-04-10,2024-05-01,2026-12-31,EN_EXECUTION,Inclusion genre et énergie productive
+CONV-PUERG-GENRE-UE-001,Don UE inclusion genre énergie,UE,DON-UE-GENRE,PUERG,PRJ-PUERG-GENRE-001,1300000,2024-05-05,2024-06-01,2026-12-31,EN_EXECUTION,Appui genre et inclusion dans les localités rurales
+CONV-PUERG-KKN-001,Convention financement projet Kankan,PTF-DEMO,DON-PTF-PUERG,PUERG,PRJ-PUERG-KKN-001,7800000,2024-02-15,2024-03-01,2027-12-31,EN_EXECUTION,Convention pilote PNER conservée pour démonstration

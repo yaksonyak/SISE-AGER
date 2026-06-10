@@ -191,6 +191,8 @@ Premier lot de données PNER réelles ajouté dans les CSV d’import : ZER, sys
 
 Deuxième lot de données PNER ajouté : projets, localités par projet, points GPS, indicateurs dashboard, valeurs d’indicateurs et coûts prévisionnels.
 
+Troisième lot de données PNER ajouté : financement détaillé avec bailleurs, sources de financement, conventions, décaissements et coûts prévisionnels enrichis pour le dashboard.
+
 
 ## Relations API métier
 

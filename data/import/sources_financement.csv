@@ -1,3 +1,22 @@
 code,nom,type_source,bailleur_code,description
-BUDGET-ETAT-PNER,Budget Etat PNER,BUDGET_ETAT,ETAT-GN,Financement public national
-DON-PTF-PUERG,Don PTF PUERG,DON,PTF-DEMO,Don partenaire pour PUERG
+BUDGET-ETAT-PNER,Budget État PNER,BUDGET_ETAT,ETAT-GN,Financement public national du PNER 2040
+CONTREPARTIE-ETAT-PUERG,Contrepartie État PUERG,BUDGET_ETAT,ETAT-GN,Contrepartie nationale pour les projets PUERG
+PRET-BM-PUERG,Prêt Banque mondiale PUERG,PRET,BM,Prêt concessionnel pour électrification rurale prioritaire
+DON-BM-SSE,Don Banque mondiale SSE,DON,BM,Appui au suivi-évaluation et aux systèmes de données
+PRET-BAD-INFRA,Prêt BAD infrastructures rurales,PRET,BAD,Financement des infrastructures de distribution rurale
+DON-BAD-ETUDES,Don BAD études,DON,BAD,Études techniques et environnementales
+SUBV-UE-ENERGIE,Subvention Union européenne énergie rurale,SUBVENTION,UE,Subvention pour accès énergie et inclusion
+DON-UE-GENRE,Don Union européenne genre,DON,UE,Appui à l’inclusion genre dans l’énergie rurale
+PRET-AFD-RESEAUX,Prêt AFD réseaux ruraux,PRET,AFD,Prêt pour densification et extension réseau MT/BT
+SUBV-AFD-CAPACITES,Subvention AFD renforcement capacités,SUBVENTION,AFD,Renforcement des capacités AGER et collectivités
+DON-PNUD-INCLUSION,Don PNUD inclusion productive,DON,PNUD,Appui aux usages productifs et aux groupes vulnérables
+FVC-SOLAIRE-RURAL,Fonds vert climat solaire rural,FONDS_VERT_CLIMAT,FVC,Financement climat pour mini-réseaux solaires
+FVC-HYBRIDE-RESILIENCE,Fonds climat hybridation résiliente,FONDS_VERT_CLIMAT,FVC,Financement climat pour systèmes hybrides PV/Hydro
+PRET-BOAD-PERMT,Prêt BOAD PERMT,PRET,BOAD,Financement régional pour programme moyen terme
+PRET-BID-HYDRO,Prêt BID petite hydro,PRET,BID,Financement hydroélectricité rurale
+DON-GIZ-TECHNIQUE,Don GIZ assistance technique,DON,GIZ,"Assistance technique SIG, planification et capacités"
+DON-USAID-PRODUCTIF,Don USAID énergie productive,DON,USAID,Appui aux usages productifs et opérateurs locaux
+PPP-PRIVE-MINIRESEAUX,PPP secteur privé mini-réseaux,PPP,PRIVE-ENERGIE,Partenariat public-privé pour mini-réseaux solaires
+OFFRE-PRIVE-STOCKAGE,Offre spontanée stockage énergie,OFFRE_SPONTANEE,PRIVE-ENERGIE,Offre spontanée pour stockage et services associés
+FIN-CARBONE-PV,Financement carbone PV rural,FINANCEMENT_CARBONE,FVC,Mécanisme carbone pour solutions solaires rurales
+DON-PTF-PUERG,Don PTF PUERG,DON,PTF-DEMO,Don partenaire de démonstration pour PUERG
