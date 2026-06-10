@@ -187,6 +187,8 @@ PRJ-PUERG-KKN-001,LOC-KOUROUSSA-001,A_ELECTRIFIER,2025-06-30,,Localite raccordab
 
 Les fixtures existantes restent disponibles pour les démonstrations rapides ; l’import CSV sert au chargement progressif des données réelles issues des documents PNER.
 
+Premier lot de données PNER réelles ajouté dans les CSV d’import : ZER, systèmes d’électrification, préfectures, sous-préfectures et localités Kindia/Télimélé.
+
 
 ## Relations API métier
 
