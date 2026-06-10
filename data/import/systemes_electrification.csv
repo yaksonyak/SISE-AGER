@@ -1,0 +1,8 @@
+code,nom,type,description,tension_kv,rayon_km,source_energie
+SYS-MT-30KV,Extension réseau MT 30 kV,EXTENSION_RESEAU_MT_30KV,Extension du réseau moyenne tension 30 kV pour localités proches du réseau existant.,30,,RESEAU
+SYS-PV-CENTRALISE,Système solaire PV centralisé,SOLAIRE_PV_CENTRALISE,Mini-réseau solaire PV centralisé pour localités rurales.,,,SOLAIRE
+SYS-PV-DECENTRALISE,Système solaire PV décentralisé SPF/SHS,SOLAIRE_PV_DECENTRALISE,Systèmes photovoltaïques familiaux ou individuels pour petites localités rurales.,,,SOLAIRE
+SYS-PETITE-HYDRO,Petite hydroélectricité,PETITE_HYDRO,"Pico, micro et mini centrales hydroélectriques avec réseaux BT, 6 kV, 15 kV ou 30 kV.",,,HYDRO
+SYS-HYBRIDE-PV-HYDRO,Système hybride PV / Hydro,HYBRIDE_PV_HYDRO,Hybridation solaire PV et hydroélectricité pour sécuriser la fourniture en période sèche.,,,HYBRIDE
+EXT-30KV,Extension réseau MT 30 kV,EXTENSION_RESEAU_MT_30KV,Code historique conservé pour les autres CSV de démonstration non modifiés dans ce lot.,30,,RESEAU
+PV-CENTRALISE,Mini-réseau solaire PV centralisé,SOLAIRE_PV_CENTRALISE,Code historique conservé pour les autres CSV de démonstration non modifiés dans ce lot.,,,SOLAIRE
