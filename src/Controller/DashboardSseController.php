@@ -11,10 +11,11 @@ use App\Entity\ProgrammePner;
 use App\Entity\ProjetElectrification;
 use App\Entity\Zer;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
-class DashboardSseController
+class DashboardSseController extends AbstractController
 {
     public function __construct(private readonly EntityManagerInterface $entityManager)
     {
