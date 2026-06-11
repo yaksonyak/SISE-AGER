@@ -67,6 +67,7 @@ security:
         - { path: ^/api/formation_genres, roles: PUBLIC_ACCESS }
         - { path: ^/api/indicateur_genres, roles: PUBLIC_ACCESS }
         - { path: ^/api/comite_genres, roles: PUBLIC_ACCESS }
+        - { path: ^/api/dashboard/sse$, roles: PUBLIC_ACCESS }
         - { path: ^/api/?$, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
