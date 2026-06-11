@@ -1,0 +1,21 @@
+code,nom,type_comite,zer_code,localite_code,date_mise_en_place,nombre_membres,nombre_femmes,nombre_hommes,statut,commentaire
+COM-GEN-001,Comité genre PNER 01,COMITE_SECTORIEL,ZER-KINDIA,LOC-FILIGBE,2024-01-05,9,3,6,EN_CREATION,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-002,Comité genre PNER 02,COMITE_INTERSECTORIEL,ZER-KINDIA,,2025-02-05,12,5,7,FONCTIONNEL,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-003,Comité genre PNER 03,CIMESA_REGIONAL,ZER-KINDIA,LOC-GOLEAH,2026-03-05,15,7,8,INACTIF,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-004,Comité genre PNER 04,COMITE_LOCAL,ZER-LABE,,2027-04-05,18,10,8,DISSOUS,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-005,Comité genre PNER 05,COMITE_SECTORIEL,ZER-MAMOU,LOC-KOLLY,2024-05-05,21,7,14,EN_CREATION,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-006,Comité genre PNER 06,COMITE_INTERSECTORIEL,ZER-FARANAH,,2025-06-05,24,10,14,FONCTIONNEL,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-007,Comité genre PNER 07,CIMESA_REGIONAL,ZER-KANKAN,LOC-MALEYA,2026-07-05,27,13,14,INACTIF,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-008,Comité genre PNER 08,COMITE_LOCAL,ZER-BOKE,,2027-08-05,30,17,13,DISSOUS,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-009,Comité genre PNER 09,COMITE_SECTORIEL,ZER-NZEREKORE,LOC-HOUNSIRE,2024-09-05,9,3,6,EN_CREATION,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-010,Comité genre PNER 10,COMITE_INTERSECTORIEL,ZER-KINDIA,,2025-10-05,12,5,7,FONCTIONNEL,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-011,Comité genre PNER 11,CIMESA_REGIONAL,ZER-KINDIA,LOC-FILIGBE,2026-11-05,15,7,8,INACTIF,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-012,Comité genre PNER 12,COMITE_LOCAL,ZER-KINDIA,,2027-12-05,18,10,8,DISSOUS,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-013,Comité genre PNER 13,COMITE_SECTORIEL,ZER-LABE,LOC-GOLEAH,2024-01-05,21,7,14,EN_CREATION,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-014,Comité genre PNER 14,COMITE_INTERSECTORIEL,ZER-MAMOU,,2025-02-05,24,10,14,FONCTIONNEL,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-015,Comité genre PNER 15,CIMESA_REGIONAL,ZER-FARANAH,LOC-KOLLY,2026-03-05,27,13,14,INACTIF,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-016,Comité genre PNER 16,COMITE_LOCAL,ZER-KANKAN,,2027-04-05,30,17,13,DISSOUS,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-017,Comité genre PNER 17,COMITE_SECTORIEL,ZER-BOKE,LOC-MALEYA,2024-05-05,9,3,6,EN_CREATION,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-018,Comité genre PNER 18,COMITE_INTERSECTORIEL,ZER-NZEREKORE,,2025-06-05,12,5,7,FONCTIONNEL,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-019,Comité genre PNER 19,CIMESA_REGIONAL,ZER-KINDIA,LOC-HOUNSIRE,2026-07-05,15,7,8,INACTIF,Comité genre/inclusion pour le suivi local et régional du PNER
+COM-GEN-020,Comité genre PNER 20,COMITE_LOCAL,ZER-KINDIA,,2027-08-05,18,10,8,DISSOUS,Comité genre/inclusion pour le suivi local et régional du PNER
