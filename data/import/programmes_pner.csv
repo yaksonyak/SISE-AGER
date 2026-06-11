@@ -1,0 +1,4 @@
+code,nom,periode_debut,periode_fin,nombre_localites_prevues,taux_electrification_cible,montant_previsionnel_usd,description
+PUERG,Programme d’Urgence d’Électrification Rurale de Guinée,2023,2027,,,,Programme d’urgence du PNER 2040 pour accélérer l’électrification rurale.
+PERMT,Programme d’Électrification Rurale à Moyen Terme,2028,2033,,,,Programme à moyen terme du PNER 2040.
+PFAUER,Programme de Finalisation de l’Accès Universel à l’Électricité Rurale,2034,2040,,,,Programme final du PNER 2040 pour l’accès universel à l’électricité rurale.
